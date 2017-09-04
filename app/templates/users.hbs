@@ -1,2 +1,4 @@
-{{outlet}}
-{{model}}
+
+{{#each model as |user| }}
+  <h1>hello, {{user.email}}</h1>
+{{/each}}
