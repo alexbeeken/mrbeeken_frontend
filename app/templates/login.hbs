@@ -1,2 +1,10 @@
-{{input type="text" value=email}}
-{{input type="password" value=password}}
+<form {{action 'authenticate' on='submit'}}>
+  <label for='email'>Email</label>
+  {{input id='email' placeholder='email' type='email' value=email}}
+  <label for='password'>Password</label>
+  {{input id='password' placeholder='password' type='password' value=password}}
+  <button type='submit'>Login</button>
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+</form>
