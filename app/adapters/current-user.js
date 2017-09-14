@@ -6,5 +6,12 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   pathForType: function(type) {
     return 'me';
   },
-  host: 'http://localhost:4000/api/v1'
+  host: 'http://localhost:4000/api/v1',
+  currentUser() {
+    return this.ajax(this.urlForCurrentUserAction(), 'GET');
+  },
+
+  urlForCurrentUserAction() {
+    return `${this.buildURL('me')}`;
+  }
 });
