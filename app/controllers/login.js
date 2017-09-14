@@ -5,8 +5,8 @@ const { service } = inject;
 
 export default Ember.Controller.extend({
   session: service('session'),
-  identification: 'example@test.com',
-  password: 'password',
+  identification: 'test@example.com',
+  password: '123456789',
   errorMessage: null,
   actions: {
     authenticate() {
@@ -15,6 +15,8 @@ export default Ember.Controller.extend({
       this.get('session').authenticate('authenticator:jwt', credentials).catch((reason) => {
         this.set('errorMessage', reason.errors[0].title || reason);
       });
+
+      this.transitionToRoute('/home');
     }
   }
 });
