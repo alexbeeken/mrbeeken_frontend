@@ -1,10 +1,10 @@
 <form {{action 'authenticate' on='submit'}}>
-  <label for='email'>Email</label>
-  {{input id='email' placeholder='email' type='email' value=email}}
-  <label for='password'>Password</label>
-  {{input id='password' placeholder='password' type='password' value=password}}
-  <button type='submit'>Login</button>
-  {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
-  {{/if}}
+  <label for="identification">Email</label>
+  {{input id='identification' placeholder='email@test.com' value=identification}}
+  <label for="password">Password</label>
+  {{input id='password' placeholder='Enter Password' type='password' value=password}}
+  <button type="submit">Login</button>
 </form>
+{{#if errorMessage}}
+<p>{{errorMessage}}</p>
+{{/if}}
