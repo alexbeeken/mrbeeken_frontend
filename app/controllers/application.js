@@ -9,6 +9,7 @@ export default Ember.Controller.extend({
   loggedIn: computed('session.isAuthenticated', function() {
     return this.get('session.isAuthenticated');
   }),
+  currentUser: null,
   actions: {
     invalidateSession() {
       this.get('session').invalidate();

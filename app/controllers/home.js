@@ -4,11 +4,11 @@ const { inject, computed } = Ember;
 const { service } = inject;
 
 export default Ember.Controller.extend({
-  user: null,
+  currentUser: null,
   actions: {
     getUserInfo() {
-      let user = this.store.queryRecord('user', { filter: { email: 'test@example.com' }})
-      this.set('user', user)
+      let currentUser = this.store.findAll('current-user')
+      this.set('currentUser', currentUser)
     }
   }
 });
