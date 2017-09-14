@@ -12,9 +12,7 @@ export default Ember.Controller.extend({
     authenticate() {
       var credentials = this.getProperties('identification', 'password')
 
-      this.get('session').authenticate('authenticator:jwt', credentials).then((result) => {
-        console.log('HELLO WORLD');
-      }).catch((reason) => {
+      this.get('session').authenticate('authenticator:jwt', credentials).catch((reason) => {
         this.set('errorMessage', reason.errors[0].title || reason);
       });
     }
