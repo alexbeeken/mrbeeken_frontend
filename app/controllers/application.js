@@ -5,7 +5,10 @@ const { service } = inject;
 
 export default Ember.Controller.extend({
   session: service(),
-  currentUser: service('current-user'),
+  cuService: service('current-user'),
+  currentUser: computed(function() {
+    return this.get('cuService.user');
+  }),
   loggedIn: computed('session.isAuthenticated', function() {
     return this.get('session.isAuthenticated');
   }),
