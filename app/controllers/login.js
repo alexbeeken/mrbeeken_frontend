@@ -19,7 +19,8 @@ export default Ember.Controller.extend({
       var that = this;
       this.get('session').authenticate('authenticator:jwt', credentials).then(function () {
         that.store.adapterFor('current-user').currentUser().then(function(currentUser) {
-          that.set('applicationController.currentUser', currentUser);
+          currentUser = that.store.push(currentUser);
+          that.get('applicationController').set('currentUser', currentUser);
         })
       }).catch((reason) => {
         this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);

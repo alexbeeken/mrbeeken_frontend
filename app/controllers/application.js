@@ -5,7 +5,6 @@ const { service } = inject;
 
 export default Ember.Controller.extend({
   session: service('session'),
-
   loggedIn: computed('session.isAuthenticated', function() {
     return this.get('session.isAuthenticated');
   }),
