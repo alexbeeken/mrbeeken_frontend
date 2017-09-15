@@ -7,10 +7,8 @@ const { alias } = computed;
 export default Ember.Controller.extend({
   session: service(),
   flashMessages: service(),
-  store: service(),
   identification: 'test@example.com',
   password: '123456789',
-  errorMessage: null,
   actions: {
     authenticate() {
       var credentials = this.getProperties('identification', 'password')
