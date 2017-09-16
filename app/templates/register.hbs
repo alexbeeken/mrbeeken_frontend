@@ -1,0 +1,12 @@
+<form {{action "register" on="submit"}}>
+  {{input type="text" value=identification value=identification}}
+  {{input type="password" value=password key-press="checkPasswordMatch"}}
+  {{input type="password" value=passwordConfirm key-press="checkPasswordMatch"}}
+  <button type="submit">Register</button>
+</form>
+
+{{#if passwordsMatch}}
+  <p>Passwords Match!</p>
+{{else}}
+  <p>Please type the same password twice.</p>
+{{/if}}
