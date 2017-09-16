@@ -13,9 +13,14 @@ export default Ember.Controller.extend({
   passwordsMatch: computed('password', 'passwordConfirm', function() {
     return this.get('password') === this.get('passwordConfirm')
   }),
+  emailUnique: true,
   actions: {
     checkEmailForUniqueNess() {
-      // TODO
+      this.get('store').queryRecord('user', { unique: this.get('identification') }).then((response) => {
+        this.set('emailUnique', response.get('meta.unique'))
+      }).catch((reason) => {
+        this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
+      });
     },
     checkPasswordMatch() {
       return this.get('password') === this.get('passwordConfirm')

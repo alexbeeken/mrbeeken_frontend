@@ -10,6 +10,12 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
       return `${this._super(...arguments)}/me`;
     }
 
+    if (query.unique) {
+      let email = query.unique
+      delete query.unique;
+      return `${this._super(...arguments)}/unique/` + email
+    }
+
     return this._super(...arguments);
   }
 });

@@ -1,5 +1,5 @@
 <form {{action "register" on="submit"}}>
-  {{input type="text" value=identification value=identification}}
+  {{input type="email" value=identification value=identification key-press="checkEmailForUniqueNess"}}
   {{input type="password" value=password key-press="checkPasswordMatch"}}
   {{input type="password" value=passwordConfirm key-press="checkPasswordMatch"}}
   <button type="submit">Register</button>
@@ -9,4 +9,10 @@
   <p>Passwords Match!</p>
 {{else}}
   <p>Please type the same password twice.</p>
+{{/if}}
+
+{{#if emailUnique}}
+  <p>Email valid!</p>
+{{else}}
+  <p>Email is already registered!</p>
 {{/if}}
