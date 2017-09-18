@@ -21,6 +21,10 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    flashMessageDefaults: {
+      timeout: 10000,
+      preventDuplicates: true
+    }
   };
 
   if (environment === 'development') {
@@ -62,5 +66,5 @@ module.exports = function(environment) {
     identificationField: 'email'
   };
 
-  return ENV;
+  return ENV
 };

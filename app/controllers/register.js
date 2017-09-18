@@ -4,26 +4,72 @@ const { inject, computed } = Ember;
 const { service, controller } = inject;
 const { alias } = computed;
 
+const check_pw_match = function(pw1, pw2) {
+  return (pw1 == pw2)
+}
+
+const pw_length = function(pw) {
+  if (pw) {
+    return pw.length < 8
+  } else {
+    return true
+  }
+}
+
+const check_email = function(email) {
+  let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  return emailRegex.test(email)
+}
+
 export default Ember.Controller.extend({
   session: service(),
   flashMessages: service(),
-  identification: 'test@example.com',
-  password: '123456789',
-  passwordConfirm: '123456789',
-  passwordsMatch: computed('password', 'passwordConfirm', function() {
-    return this.get('password') === this.get('passwordConfirm')
+  ajax: service(),
+  identification: null,
+  password: null,
+  passwordConfirm: null,
+  passwordsDiff: computed('password', 'passwordConfirm', function() {
+    let pw1 = this.get('password')
+    let pw2 = this.get('passwordConfirm')
+    if (pw1 && pw2) {
+      return !check_pw_match(pw1, pw2)
+    } else if (pw1 || pw2) {
+      return true
+    } else {
+      return false
+    }
   }),
-  emailUnique: true,
+  passwordInvalid: computed('password', 'passwordConfirm', function() {
+    let pw1 = this.get('password')
+    let pw2 = this.get('passwordConfirm')
+    if (pw1 || pw2) {
+      return (pw_length(pw1) || pw_length(pw2))
+    } else {
+      return false
+    }
+  }),
+  emailUnique: null,
+  emailInvalid: null,
+  inputInvalid: computed('emailUnique', 'emailInvalid', 'passwordsDiff', function() {
+    if (!this.get('emailUnique') && !this.get('emailInvalid') && !this.get('passwordsDiff') && !this.get('passwordInvalid')) {
+      return null
+    } else {
+      return true
+    }
+  }),
   actions: {
-    checkEmailForUniqueNess() {
-      this.get('store').queryRecord('user', { unique: this.get('identification') }).then((response) => {
-        this.set('emailUnique', response.get('meta.unique'))
-      }).catch((reason) => {
-        this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
-      });
-    },
-    checkPasswordMatch() {
-      return this.get('password') === this.get('passwordConfirm')
+    checkEmail() {
+      let email = this.get('identification')
+      if (check_email(email)) {
+        this.set('emailInvalid', false)
+        this.store.adapterFor('application').emailUnique(email).then((response) => {
+          this.set('emailUnique', (response['meta']['unique'] == '0'))
+        }).catch((reason) => {
+          this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
+        });
+      } else {
+        this.set('emailInvalid', true)
+      }
     },
     register() {
       var user = this.store.createRecord('user', {
