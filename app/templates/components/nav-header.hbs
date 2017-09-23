@@ -1,0 +1,12 @@
+<ul>
+  <li>
+    {{#link-to 'news'}}news{{/link-to}}
+  </li>
+  <li>
+    {{#if loggedIn}}
+      <button {{action 'invalidateSession'}}>Logout</button>
+    {{else}}
+      {{#link-to 'login'}}login{{/link-to}}
+    {{/if}}
+  </li>
+</ul>
