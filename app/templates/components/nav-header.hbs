@@ -1,16 +1,21 @@
-<header class='main-logo'>
-  {{inline-svg "svg/bannerlogo"}}
+<header class='brand'>
+  {{#link-to 'home'}}
+    <div class='main-logo'>
+      {{inline-svg 'svg/main-logo'}}
+    </div>
+  {{/link-to}}
 </header>
-
-<ul>
-  <li>
-    {{#link-to 'news'}}news{{/link-to}}
-  </li>
-  <li>
-    {{#if currentUser}}
-      <button {{action 'invalidateSession'}}>Logout</button>
-    {{else}}
-      {{#link-to 'login'}}login{{/link-to}}
-    {{/if}}
-  </li>
-</ul>
+<nav class='main-nav'>
+  <ul>
+    <li>
+      {{#link-to 'news'}}news{{/link-to}}
+    </li>
+    <li>
+      {{#if currentUser}}
+        <button {{action 'invalidateSession'}}>Logout</button>
+      {{else}}
+        {{#link-to 'login'}}login{{/link-to}}
+      {{/if}}
+    </li>
+  </ul>
+</nav>
