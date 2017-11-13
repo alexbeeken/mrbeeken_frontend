@@ -24,6 +24,14 @@ module.exports = function(environment) {
     flashMessageDefaults: {
       timeout: 10000,
       preventDuplicates: true
+    },
+    googleFonts: [
+      'Oswald',
+      'Merriweather'
+    ],
+    contentSecurityPolicy: {
+      'font-src': "'self' fonts.gstatic.com",
+      'style-src': "'self' fonts.googleapis.com"
     }
   };
 

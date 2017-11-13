@@ -1,0 +1,22 @@
+{{#if show}}
+  <nav class='main-nav'>
+    <div class='dismiss-menu'>
+      <button {{action 'dismissMenu'}}>{{fa-icon 'times'}}</button>
+    </div>
+    <ul>
+      <li>
+        {{component 'nav-link' text='news' path='news' icon='newspaper-o'}}
+      </li>
+      <li>
+        {{component 'nav-link' text='videos' path='news' icon='video-camera'}}
+      </li>
+      <li>
+        {{component 'nav-link' text='about' path='news' icon='info-circle'}}
+      </li>
+    </ul>
+  </nav>
+{{else}}
+<div class='show-menu'>
+  <button {{action 'showMenu'}}>{{fa-icon 'bars'}}</button>
+</div>
+{{/if}}

@@ -1,0 +1,22 @@
+.nav-header {
+  background-color: #abcfe7;
+  border: 0.02vw solid gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 10vh;
+  min-height: 50px;
+  .main-logo {
+    svg {
+      width: 15em;
+    }
+  }
+  .user-login {
+    a {
+      font-family: 'Merriweather';
+      text-decoration: none;
+    }
+    font-size: 2vw;
+    width: 20vw;
+  }
+}
