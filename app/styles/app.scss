@@ -5,3 +5,11 @@
 body {
   margin: 0px;
 }
+
+.body-space {
+  display: flex;
+  justify-content: space-between;
+  .main-content {
+    width: 100%;
+  }
+}
