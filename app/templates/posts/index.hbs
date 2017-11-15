@@ -1,0 +1,7 @@
+<h1> News page </h1>
+
+{{#each posts as |post|}}
+  {{#link-to "post" post.id}}
+    <h1>{{post.title}}</h1>
+  {{/link-to}}
+{{/each}}

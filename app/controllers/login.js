@@ -14,7 +14,9 @@ export default Ember.Controller.extend({
       var credentials = this.getProperties('identification', 'password')
 
       var that = this;
-      return this.get('session').authenticate('authenticator:jwt', credentials).catch((reason) => {
+      return this.get('session').authenticate('authenticator:jwt', credentials).then((result) => {
+        this.get('flashMessages').info('login successful');
+      }).catch((reason) => {
         this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
       });
     }

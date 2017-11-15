@@ -1,0 +1,40 @@
+<div class='news-form'>
+  <form {{action 'savePost' on='submit'}}>
+    <div class='news-form-input'>
+      {{input
+        type="text"
+        placeholder="Title"
+        value=title}}
+    </div>
+
+    <div class='news-form-input'>
+      {{input
+        type="text"
+        placeholder="Summary"
+        value=summary}}
+    </div>
+
+    <div class='news-form-input'>
+      {{input
+        type="text"
+        placeholder="Thumbnail URL"
+        value=thumbnail}}
+    </div>
+
+    <div class='news-form-input'>
+      {{input
+        type="text"
+        placeholder="Audio URL"
+        value=audio}}
+    </div>
+
+    <div class='news-form-input'>
+      {{textarea
+        placeholder="Content"
+        value=content}}
+    </div>
+    <div class='news-form-input'>
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</div>

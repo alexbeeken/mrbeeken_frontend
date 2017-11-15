@@ -5,10 +5,10 @@
     {{/link-to}}
   </div>
   <div class='user-login'>
-    <!-- {{#if currentUser}}
-    <button {{action 'invalidateSession'}}>Logout</button>
+    {{#if currentUser}}
+      <button {{action 'invalidateSession'}}>Logout</button>
     {{else}}
-    {{#link-to 'login'}}login{{/link-to}}
-    {{/if}} -->
+      <!-- {{#link-to 'login'}}login{{/link-to}} -->
+    {{/if}}
   </div>
 </header>

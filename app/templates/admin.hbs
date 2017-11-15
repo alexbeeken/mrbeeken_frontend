@@ -1,0 +1,29 @@
+<h1> Admin Page </h1>
+
+{{#link-to "posts.new"}}
+  <h1>New Post</h1>
+{{/link-to}}
+
+<table>
+  {{#each posts as |post|}}
+    <tr>
+      <td>
+        {{#link-to "post" post.id}}
+          <h1>{{post.title}}</h1>
+        {{/link-to}}
+      </td>
+      <td>
+        {{#link-to "post.edit" post.id}}
+          <h3>edit</h3>
+        {{/link-to}}
+      </td>
+      <td>
+        {{#confirm-dialog}}
+          <button {{action "deletePost" post.id}}>
+            {{fa-icon "times"}}
+          </button>
+        {{/confirm-dialog}}
+      </td>
+    </tr>
+  {{/each}}
+</table>

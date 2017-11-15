@@ -1,6 +1,9 @@
 @import 'fonts.scss';
 @import 'nav-menu.scss';
 @import 'nav-header.scss';
+@import 'posts/new.scss';
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 
 body {
   margin: 0px;
