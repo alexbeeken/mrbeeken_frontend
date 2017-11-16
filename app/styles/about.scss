@@ -1,3 +1,142 @@
 .mission-statement {
   text-align: center;
 }
+
+// Place all the styles related to the about controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.headshot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px;
+  img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain ;
+  }
+}
+
+.jumbotron {
+  padding: 30px;
+}
+
+.title {
+  font-size: 50px;
+  text-align: center;
+}
+
+.text {
+  font-size: 21px;
+}
+
+.support-message {
+  font-size: 30px;
+}
+
+.support-explanation {
+  font-size: 20px;
+}
+
+.title, .support-message, .support-explanation, .feed {
+  font-family: 'Oswald';
+}
+
+.text {
+  font-family: monospace;
+}
+
+.photos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.photo {
+  float: left;
+  img {
+    width: 300px;
+  }
+}
+
+.check-box {
+  text-align: center;
+  .fa-check {
+    color: green;
+  }
+  .fa-times {
+    color: red;
+  }
+}
+
+.rewards-tables {
+  width: 100%;
+  .table {
+    width: 100%;
+    th, td, tr {
+      background-color: white;
+    }
+    th {
+      font-size: 3vw;
+    }
+    .title-cell {
+      font-size: 2vw;
+    }
+    td, tr {
+      font-size: 3vw;
+    }
+    td {
+      text-align: center;
+      img {
+        align-self: center;
+        width: 8vw;
+      }
+    }
+    .reward-table-header {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      .reward-badge {
+        &:hover {
+          -webkit-animation: pulse 1s infinite;
+          animation: pulse 1s infinite;
+        }
+      }
+    }
+  }
+}
+
+.patreon-link {
+  font-family: 'Oswald';
+}
+
+.support-answer {
+  font-family: monospace;
+}
+
+.reward-title {
+  font-size: 1vw;
+}
+
+.patreon-link-spacer {
+  width: 100%;
+  text-align: center;
+}
+
+.patreon-link {
+  text-decoration: none;
+  font-size: 25px;
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  padding: 10px;
+  border-radius: 7px;
+  &:hover {
+    box-shadow: 2px 2px #afafaf;
+  }
+}
