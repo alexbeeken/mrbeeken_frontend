@@ -2,7 +2,11 @@
   font-family: 'Oswald';
 }
 
-.about-titles {
-  display: flex;
-  justify-content: space-around;
+.about {
+  padding: $padding;
+  .about-titles {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
 }

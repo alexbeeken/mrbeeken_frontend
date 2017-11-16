@@ -1,10 +1,11 @@
-<section class='about-titles'>
-  <article class='title' {{action "switchBlurb" "philosophy" on="mouseEnter"}}>
-    Philosophy
-  </article>
-  <article class='title' {{action "switchBlurb" "me" on="mouseEnter"}}>
-    About Me
-  </article>
+<section class='about'>
+  <section class='about-titles'>
+    <article class='title' {{action "switchBlurb" "philosophy" on="mouseEnter"}}>
+      Philosophy
+    </article>
+    <article class='title' {{action "switchBlurb" "me" on="mouseEnter"}}>
+      About Me
+    </article>
+  </section>
+  {{partial currentBlurb}}
 </section>
-
-{{partial currentBlurb}}
