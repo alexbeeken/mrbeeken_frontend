@@ -1,25 +1,28 @@
 .feed {
   .post {
     border: $border-thickness solid $border-color;
-    border-radius: 1em;
+    border-radius: 1vw;
     width: 75vw;
-    margin: 1em;
-    height: 8em;
+    margin: 1vw;
+    height: 10vw;
     padding: $padding;
     .title {
+      font-size: 1.8vw;
       display: flex;
       justify-content: flex-start;
-      height: 1.5em;
+      height: 4vw;
+      border-bottom: 0.1vw solid $gray;
       a {
         text-decoration: none;
       }
-      font-size: 2em;
       text-align: left;
     }
     .summary {
+      overflow: auto;
+      font-size: 1.3vw;
     }
     &:hover {
-      box-shadow: 0.05em 0.05em 0.05em 0.05em #969696;
+      box-shadow: 0.05em 0.05em 0.05em 0.05em $gray;
     }
   }
 }
