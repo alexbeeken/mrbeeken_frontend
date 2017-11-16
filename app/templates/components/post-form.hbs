@@ -3,6 +3,8 @@
     <div class='news-form-input'>
       {{input
         type="text"
+        pattern=".{3,120}"
+        required=true
         placeholder="Title"
         value=title}}
     </div>
@@ -10,6 +12,8 @@
     <div class='news-form-input'>
       {{input
         type="text"
+        pattern=".{3,496}"
+        required=true
         placeholder="Summary"
         value=summary}}
     </div>
