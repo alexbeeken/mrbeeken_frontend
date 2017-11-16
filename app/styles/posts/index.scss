@@ -1,0 +1,25 @@
+.feed {
+  .post {
+    border: $border-thickness solid $border-color;
+    border-radius: 1em;
+    width: 75vw;
+    margin: 1em;
+    height: 11em;
+    padding: $padding;
+    .title {
+      display: flex;
+      justify-content: flex-start;
+      height: 3em;
+      a {
+        text-decoration: none;
+      }
+      font-size: 2em;
+      text-align: left;
+    }
+    .summary {
+    }
+    &:hover {
+      box-shadow: 0.05em 0.05em 0.05em 0.05em #969696;
+    }
+  }
+}
