@@ -7,23 +7,24 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('users');
-  this.route('login', { path: '/login' });
-  this.route('register', { path: '/register' });
-  this.route('home');
-  this.route('admin');
-  this.route('about', function() {
-    this.route('education');
-    this.route('experience');
-    this.route('accomplishments');
-  });
-  this.route('projects');
-  this.route('posts', function() {
-    this.route('new');
-  });
-  this.resource('post', { path: '/post/:post_id' }, function() {
-    this.route('edit');
-  });
+  this.route('education');
+  this.route('experience');
+  this.route('accomplishments');
+  // this.route('users');
+  // this.route('login', { path: '/login' });
+  // this.route('register', { path: '/register' });
+  // this.route('home');
+  // this.route('admin');
+  // this.route('about', function() {
+  //
+  // });
+  // this.route('projects');
+  // this.route('posts', function() {
+  //   this.route('new');
+  // });
+  // this.resource('post', { path: '/post/:post_id' }, function() {
+  //   this.route('edit');
+  // });
 });
 
 export default Router;

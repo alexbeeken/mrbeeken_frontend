@@ -1,1 +1,19 @@
-<p>home route</p>
+<section class='about'>
+  <section class='about-titles'>
+    <article class='title' {{action 'switchBlurb' 'about.experience' on="mouseEnter"}}
+      style="{{if experienceActive 'font-size:1.5em'}}">
+      Experience
+    </article>
+    |
+    <article class='title' {{action 'switchBlurb' 'about.education' on="mouseEnter"}}
+      style="{{if educationActive 'font-size:1.5em'}}">
+      Education
+    </article>
+    |
+    <article class='title' {{action 'switchBlurb' 'about.accomplishments' on="mouseEnter"}}
+      style="{{if accomplishmentsActive 'font-size:1.5em'}}">
+        Accomplishments
+    </article>
+  </section>
+  {{liquid-outlet class="{{currentBlurb}}"}}
+</section>

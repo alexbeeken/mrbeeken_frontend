@@ -5,15 +5,16 @@ const { service } = inject;
 const { alias } = computed;
 
 export default Ember.Controller.extend({
-  session: service(),
-  cuService: service('current-user'),
-  currentUser: alias('cuService.user'),
-  loggedIn: computed('session.isAuthenticated', function() {
-    return this.get('session.isAuthenticated');
-  }),
+  currentBlurb: 'experience',
+  experienceActive: true,
+  educationActive: false,
+  accomplishmentsActive: false,
   actions: {
-    invalidateSession() {
-      this.get('session').invalidate();
+    switchBlurb(newBlurb) {
+      this.set('experienceActive', (newBlurb == 'experience'))
+      this.set('educationActive', (newBlurb == 'education'))
+      this.set('accomplishmentsActive', (newBlurb == 'accomplishments'))
+      this.transitionToRoute(newBlurb)
     }
-  },
+  }
 });

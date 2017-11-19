@@ -21,4 +21,15 @@
     font-size: 2vw;
     width: 20vw;
   }
+  .links {
+    padding: $padding;
+    text-align: center;
+    float: right;
+    padding-top: 3em;
+    a {
+      font-size: 2.5em;
+      text-decoration: none;
+      color: black;
+    }
+  }
 }

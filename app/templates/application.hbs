@@ -5,6 +5,24 @@
 <div class='body-space'>
   <!-- {{component 'nav-menu'}} -->
   <div class='main-content'>
-    {{outlet}}
+    <section class='about'>
+      <section class='about-titles'>
+        <article class='title' {{action 'switchBlurb' 'experience' on="mouseEnter"}}
+          style="{{if experienceActive 'font-size:1.5em'}}">
+          Experience
+        </article>
+        |
+        <article class='title' {{action 'switchBlurb' 'education' on="mouseEnter"}}
+          style="{{if educationActive 'font-size:1.5em'}}">
+          Education
+        </article>
+        |
+        <article class='title' {{action 'switchBlurb' 'accomplishments' on="mouseEnter"}}
+          style="{{if accomplishmentsActive 'font-size:1.5em'}}">
+            Accomplishments
+        </article>
+      </section>
+      {{liquid-outlet class="{{currentBlurb}}"}}
+    </section>
   </div>
 </div>
