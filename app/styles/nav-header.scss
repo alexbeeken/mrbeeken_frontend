@@ -4,11 +4,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-height: 10vh;
   min-height: 50px;
   .main-logo {
-    svg {
-      width: 15em;
+    margin-left: 1em;
+    a {
+      font-size: 1em;
+      text-decoration: none;
+      color: black;
     }
   }
   .user-login {

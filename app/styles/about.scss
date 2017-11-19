@@ -1,12 +1,17 @@
-.title, .support-message, .support-explanation, .feed {
-  font-family: 'Oswald';
-}
-
 .about {
   padding: $padding;
   .about-titles {
-    width: 100%;
     display: flex;
+    font-family: 'Oswald';
     justify-content: space-around;
+    width: 100%;
+    .title {
+      height: 3vw;
+      width: 100%;
+      text-align: center;
+      transition-property: font-size;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-out;
+    }
   }
 }

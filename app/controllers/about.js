@@ -1,13 +1,16 @@
 import Ember from 'ember';
 
-const { inject, computed } = Ember;
-const { service, controller } = inject;
-
 export default Ember.Controller.extend({
-  currentBlurb: 'philosophy',
+  currentBlurb: 'about/experience',
+  experienceActive: true,
+  educationActive: false,
+  accomplishmentsActive: false,
   actions: {
-    switchBlurb(partialName) {
-      this.set('currentBlurb', partialName)
+    switchBlurb(newBlurb) {
+      this.set('experienceActive', (newBlurb == 'about.experience'))
+      this.set('educationActive', (newBlurb == 'about.education'))
+      this.set('accomplishmentsActive', (newBlurb == 'about.accomplishments'))
+      this.transitionToRoute(newBlurb)
     }
   }
 });

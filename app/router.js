@@ -12,8 +12,12 @@ Router.map(function() {
   this.route('register', { path: '/register' });
   this.route('home');
   this.route('admin');
-  this.route('about');
-  this.route('videos');
+  this.route('about', function() {
+    this.route('education');
+    this.route('experience');
+    this.route('accomplishments');
+  });
+  this.route('projects');
   this.route('posts', function() {
     this.route('new');
   });
