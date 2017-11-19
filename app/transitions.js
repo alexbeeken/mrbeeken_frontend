@@ -4,7 +4,7 @@ export default function(){
     this.fromRoute('education'),
     this.toRoute('education'),
     this.toRoute('accomplishments'),
-    this.use('toLeft'),
-    this.reverse('toRight')
+    this.use('toLeft', { duration: 300 }),
+    this.reverse('toRight', { duration: 300 })
   );
 }
