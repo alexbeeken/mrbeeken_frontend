@@ -1,0 +1,19 @@
+.proficients, .workedWiths, .tinkereds {
+  padding: $padding;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  .proficient {
+    width: 6em;
+  }
+  .workedWith {
+    width: 4em;
+  }
+  .tinkered {
+    width: 3em;
+    img {
+      width: 3em;
+    }
+  }
+}

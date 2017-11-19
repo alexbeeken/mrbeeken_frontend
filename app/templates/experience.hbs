@@ -1,1 +1,26 @@
-<h2>built apps in:</h2>
+<h2>Proficiency:</h2>
+<section class='proficients'>
+  {{#each proficients as |language|}}
+    <div class='proficient'>
+      {{experience-icon path=language}}
+    </div>
+  {{/each}}
+</section>
+
+<h2>Worked With:</h2>
+<section class='workedWiths'>
+  {{#each workedWiths as |language|}}
+    <div class='workedWith'>
+      {{experience-icon path=language}}
+    </div>
+  {{/each}}
+</section>
+
+<h2>Used in Personal Projects:</h2>
+<section class='tinkereds'>
+  {{#each tinkereds as |language|}}
+    <div class='tinkered'>
+      {{experience-icon path=language}}
+    </div>
+  {{/each}}
+</section>
