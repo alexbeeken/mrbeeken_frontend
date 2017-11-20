@@ -1,32 +1,38 @@
-<div class='generic-title'>
-  <h2>Proficiency</h2>
+<div class='generic-section'>
+  <div class='generic-title'>
+    <h2 class='surprise'>Proficient In</h2>
+  </div>
+  <section class='proficients'>
+    {{#each proficients as |language|}}
+      <div class='proficient'>
+        {{experience-icon path=language}}
+      </div>
+    {{/each}}
+  </section>
 </div>
-<section class='proficients'>
-  {{#each proficients as |language|}}
-    <div class='proficient'>
-      {{experience-icon path=language}}
-    </div>
-  {{/each}}
-</section>
 
-<div class='generic-title'>
-  <h2>Worked With</h2>
+<div class='generic-section'>
+  <div class='generic-title'>
+    <h2 class='surprise'>Have Worked With</h2>
+  </div>
+  <section class='workedWiths'>
+    {{#each workedWiths as |language|}}
+      <div class='workedWith'>
+        {{experience-icon path=language}}
+      </div>
+    {{/each}}
+  </section>
 </div>
-<section class='workedWiths'>
-  {{#each workedWiths as |language|}}
-    <div class='workedWith'>
-      {{experience-icon path=language}}
-    </div>
-  {{/each}}
-</section>
 
-<div class='generic-title'>
-  <h2>Used in Personal Projects</h2>
+<div class='generic-section'>
+  <div class='generic-title'>
+    <h2 class='surprise'>Used in Personal Projects</h2>
+  </div>
+  <section class='tinkereds'>
+    {{#each tinkereds as |language|}}
+      <div class='tinkered'>
+        {{experience-icon path=language}}
+      </div>
+    {{/each}}
+  </section>
 </div>
-<section class='tinkereds'>
-  {{#each tinkereds as |language|}}
-    <div class='tinkered'>
-      {{experience-icon path=language}}
-    </div>
-  {{/each}}
-</section>

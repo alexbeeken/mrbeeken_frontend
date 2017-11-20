@@ -23,7 +23,23 @@ body {
   }
 }
 
-.generic-title {
-  text-align: center;
-  font-size: 0.8em;
+.generic-section {
+  .generic-title {
+    text-align: center;
+    font-size: 0.8em;
+    color: $gray;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+    .hidden, .surprise {
+      opacity: 0;
+    }
+  }
+  &:hover {
+    .generic-title {
+      .surprise {
+        opacity: 1.0;
+      }
+    }
+  }
 }
