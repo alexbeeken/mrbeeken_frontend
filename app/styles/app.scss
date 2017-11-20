@@ -29,10 +29,10 @@ body {
     text-align: center;
     font-size: 0.8em;
     color: $gray;
-    transition-property: opacity;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-out;
     .hidden, .surprise {
+      transition-property: opacity;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-out;
       opacity: 0;
     }
   }

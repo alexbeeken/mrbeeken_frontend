@@ -23,11 +23,31 @@
         margin-top: 1.25em;
       }
     }
-    .time {
-      font-size: 1em;
+    .school-text {
+      .time {
+        opacity: 0;
+        font-size: 1em;
+        transition-property: opacity;
+        transition-duration: 0.4s;
+        transition-delay: 0.2s;
+      }
+      .note {
+        opacity: 0;
+        font-size: 0.7em;
+        transition-property: opacity;
+        transition-duration: 0.4s;
+        transition-delay: 0.4s;
+      }
     }
-    .note {
-      font-size: 0.7em;
+  }
+  &:hover {
+    .school-text {
+      .time {
+        opacity: 1;
+      }
+      .note {
+        opacity: 1;
+      }
     }
   }
 }

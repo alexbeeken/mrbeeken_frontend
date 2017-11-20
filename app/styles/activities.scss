@@ -22,12 +22,21 @@
           width: 15em;
         }
       }
-      .note {
+      .conf-note {
+        opacity: 0;
         font-size: 1em;
+        transition-property: opacity;
+        transition-duration: 0.4s;
+        transition-delay: 0.2s;
       }
     }
     .activity-note {
       height: 80%;
+    }
+    &:hover {
+      .conf-note {
+        opacity: 1;
+      }
     }
   }
 }
