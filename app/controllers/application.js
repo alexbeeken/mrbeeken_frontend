@@ -6,7 +6,7 @@ const { alias } = computed;
 
 export default Ember.Controller.extend({
   currentBlurb: 'experience',
-  experienceActive: false,
+  experienceActive: true,
   educationActive: false,
   activitiesActive: false,
   actions: {

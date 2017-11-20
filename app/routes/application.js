@@ -7,6 +7,9 @@ const { service } = inject;
 export default Ember.Route.extend(ApplicationRouteMixin, {
   currentUser: service('current-user'),
   beforeModel() {
+    if (this.get('routeName') == 'application') {
+      this.transitionTo('experience');
+    }
     return this._loadCurrentUser();
   },
 
