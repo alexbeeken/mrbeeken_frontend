@@ -6,14 +6,14 @@ const { alias } = computed;
 
 export default Ember.Controller.extend({
   currentBlurb: 'experience',
-  experienceActive: true,
+  experienceActive: false,
   educationActive: false,
-  accomplishmentsActive: false,
+  activitiesActive: false,
   actions: {
     switchBlurb(newBlurb) {
       this.set('experienceActive', (newBlurb == 'experience'))
       this.set('educationActive', (newBlurb == 'education'))
-      this.set('accomplishmentsActive', (newBlurb == 'accomplishments'))
+      this.set('activitiesActive', (newBlurb == 'activities'))
       this.transitionToRoute(newBlurb)
     }
   }

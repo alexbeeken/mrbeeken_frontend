@@ -1,0 +1,33 @@
+
+.schools {
+  padding: $padding;
+  padding-top: $padding * 2;
+  margin-bottom: 6em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  .school {
+    margin: auto;
+    height: 17em;
+    text-align: center;
+    .logo {
+      img {
+        width: 15em;
+      }
+      height: 9em;
+      .pcc img {
+        margin-top: 1.2em;
+      }
+      .psu img {
+        margin-top: 1.25em;
+      }
+    }
+    .time {
+      font-size: 1em;
+    }
+    .note {
+      font-size: 0.7em;
+    }
+  }
+}

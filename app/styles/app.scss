@@ -9,6 +9,7 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 @import "experience";
+@import "education";
 
 body {
   margin: 0px;
@@ -20,4 +21,9 @@ body {
   .main-content {
     width: 100%;
   }
+}
+
+.generic-title {
+  text-align: center;
+  font-size: 0.8em;
 }
