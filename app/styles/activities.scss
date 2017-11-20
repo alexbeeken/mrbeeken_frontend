@@ -1,0 +1,33 @@
+.activities {
+  .activity {
+    .pictures {
+      margin: 0px 8em;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      text-align: center;
+      height: 14em;
+      .conf-icon {
+        width: 20em;
+        .ember-conf, .ruby-on-ales, .ml-conf {
+          height: 10.5em;
+        }
+        .ruby-on-ales img {
+          margin-top: 1.6em;
+        }
+        .ml-conf img {
+          margin-top: 2.2em;
+        }
+        img {
+          width: 15em;
+        }
+      }
+      .note {
+        font-size: 1em;
+      }
+    }
+    .activity-note {
+      height: 80%;
+    }
+  }
+}
