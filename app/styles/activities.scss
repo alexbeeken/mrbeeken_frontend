@@ -1,5 +1,5 @@
 .conferences {
-  height: 20em;
+  height: 50vh;
   .conferences-row {
     padding: $padding;
     .pictures {
@@ -25,20 +25,13 @@
         }
       }
       .conf-note {
-        opacity: 0;
+        animation: fadeIn 0.7s 1 alternate;
+        -webkit-animation: fadeIn 0.7s 1 alternate;
         font-size: 1em;
-        transition-property: opacity;
-        transition-duration: 0.4s;
-        transition-delay: 0.2s;
       }
     }
     .activity-note {
       height: 80%;
-    }
-    &:hover {
-      .conf-note {
-        opacity: 1;
-      }
     }
   }
 }
@@ -101,6 +94,8 @@
   text-align: center;
   height: 20em;
   .description {
+    animation: fadeIn 0.7s 1 alternate;
+    -webkit-animation: fadeIn 0.7s 1 alternate;
     font-size: 1.5em;
     padding-top: 2em;
     width: 30em;
@@ -118,6 +113,8 @@
   text-align: center;
   height: 20em;
   .description {
+    animation: fadeIn 0.7s 1 alternate;
+    -webkit-animation: fadeIn 0.7s 1 alternate;
     font-size: 1.5em;
     padding-top: 2em;
     width: 30em;
