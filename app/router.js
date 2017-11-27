@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('activities', function() {
     this.route('conferences');
     this.route('monolake');
+    this.route('mrbeeken');
   });
   // this.route('users');
   // this.route('login', { path: '/login' });

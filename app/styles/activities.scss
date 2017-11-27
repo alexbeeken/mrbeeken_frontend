@@ -44,10 +44,13 @@
 }
 
 .monolake-link {
+  margin-bottom: 1em;
   text-align: center;
   width: 100%;
-  animation: bounceIn 0.5s infinite alternate;
-  -webkit-animation: bounceIn 0.5s infinite alternate;
+  .see-more {
+    animation: bounceIn 0.5s infinite alternate;
+    -webkit-animation: bounceIn 0.5s infinite alternate;
+  }
   a {
     color: black;
     text-decoration: none;
@@ -97,26 +100,34 @@
   flex-wrap: wrap-reverse;
   text-align: center;
   height: 20em;
-  &:target {
-    background-color: black;
-    transition: bounceIn 0.5s infinite alternate;
-    -webkit-transition: bounceIn 0.5s infinite alternate;
-  }
   .description {
-    opacity: 0;
-    font-size: 1em;
-    transition-property: opacity;
-    transition-duration: 0.4s;
-    transition-delay: 0.2s;
+    font-size: 1.5em;
     padding-top: 2em;
     width: 30em;
   }
-  &:hover {
-    .description {
-      opacity: 1;
-    }
-  }
   img {
-    width: 20em;
+    width: 25em;
+  }
+}
+
+.mrbeeken {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap-reverse;
+  text-align: center;
+  height: 20em;
+  .description {
+    font-size: 1.5em;
+    padding-top: 2em;
+    width: 30em;
+  }
+  .pictures {
+    width: 25em;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 20em;
+    }
   }
 }
