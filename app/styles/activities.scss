@@ -1,12 +1,14 @@
-.activities {
-  .activity {
+.conferences {
+  height: 20em;
+  .conferences-row {
+    padding: $padding;
     .pictures {
-      margin: 0px 8em;
+      margin: auto;
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       justify-content: space-between;
-      flex-direction: row;
       text-align: center;
-      height: 14em;
       .conf-icon {
         width: 20em;
         .ember-conf, .ruby-on-ales, .ml-conf {
@@ -38,5 +40,83 @@
         opacity: 1;
       }
     }
+  }
+}
+
+.monolake-link {
+  text-align: center;
+  width: 100%;
+  animation: bounceIn 0.5s infinite alternate;
+  -webkit-animation: bounceIn 0.5s infinite alternate;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(1.0);
+  }
+  10% {
+    transform: scale(1.01);
+  }
+  20% {
+    transform: scale(1.03);
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  40% {
+    transform: scale(1.07);
+  }
+  50% {
+    transform: scale(1.09);
+  }
+  60% {
+    transform: scale(1.11);
+  }
+  70% {
+    transform: scale(1.13);
+  }
+  80% {
+    transform: scale(1.15);
+  }
+  90% {
+    transform: scale(1.17);
+  }
+  100% {
+    transform: scale(1.19);
+  }
+}
+
+.mono-lake-store {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap-reverse;
+  text-align: center;
+  height: 20em;
+  &:target {
+    background-color: black;
+    transition: bounceIn 0.5s infinite alternate;
+    -webkit-transition: bounceIn 0.5s infinite alternate;
+  }
+  .description {
+    opacity: 0;
+    font-size: 1em;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-delay: 0.2s;
+    padding-top: 2em;
+    width: 30em;
+  }
+  &:hover {
+    .description {
+      opacity: 1;
+    }
+  }
+  img {
+    width: 20em;
   }
 }

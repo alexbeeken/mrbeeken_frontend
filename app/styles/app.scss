@@ -1,8 +1,6 @@
 @import 'variables.scss';
 @import 'fonts.scss';
-@import 'about.scss';
 @import 'projects.scss';
-@import 'nav-menu.scss';
 @import 'nav-header.scss';
 @import 'posts/new.scss';
 @import 'posts/index.scss';
@@ -12,16 +10,19 @@
 @import "education";
 @import "activities";
 
-body {
-  margin: 0px;
+.body-space {
+  padding-top: 11em;
+  width: 100%;
+  position: absolute;
 }
 
-.body-space {
-  display: flex;
-  justify-content: space-between;
-  .main-content {
-    width: 100%;
-  }
+.header-background {
+  float: left;
+  position: fixed;
+  min-height: 50px;
+  width: 100%;
+  z-index: 80;
+  background: white;
 }
 
 .generic-section {

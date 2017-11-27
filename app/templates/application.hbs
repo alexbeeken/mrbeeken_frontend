@@ -1,28 +1,9 @@
-{{component 'nav-header'}}
+<div class='header-background'>
+  {{component 'nav-header' transitionAway='transitionAway'}}
+</div>
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
 <div class='body-space'>
-  <!-- {{component 'nav-menu'}} -->
-  <div class='main-content'>
-    <section class='about'>
-      <section class='about-titles'>
-        <article class='title' {{action 'switchBlurb' 'experience' on="mouseEnter"}}
-          style="{{if experienceActive 'font-size:1.5em'}}">
-          Experience
-        </article>
-        |
-        <article class='title' {{action 'switchBlurb' 'education' on="mouseEnter"}}
-          style="{{if educationActive 'font-size:1.5em'}}">
-          Education
-        </article>
-        |
-        <article class='title' {{action 'switchBlurb' 'activities' on="mouseEnter"}}
-          style="{{if activitiesActive 'font-size:1.5em'}}">
-            Activities
-        </article>
-      </section>
-      {{liquid-outlet class="{{currentBlurb}}"}}
-    </section>
-  </div>
+  {{liquid-outlet class="{{currentBlurb}}"}}
 </div>

@@ -1,0 +1,23 @@
+<section id='monolake' class='generic-section'>
+  <div class='generic-title'>
+    <h2 class='surprise'>Mono Lake Committee</h2>
+  </div>
+  <div class='mono-lake-store'>
+    <div class='description'>
+      <p>
+         The Mono Lake Committee needed a stand alone touch screen interpretive display in their bookstore.
+         I wrote an ember app that is hosted on a less-than-powerful laptop running linux.
+         This app reads it's content from a "content" folder with YAML files.
+         Although not perfect, it is made so non-coders can update with new exhibits.
+      </p>
+    </div>
+    <div class='pictures'>
+        <img src='/monolake.jpg'>
+    </div>
+  </div>
+  <div class='monolake-link'>
+    {{#link-to 'activities.conferences'}}
+      See More {{fa-icon 'arrow-up'}}
+    {{/link-to}}
+  </div>
+</section>

@@ -7,4 +7,11 @@ export default function(){
     this.use('toLeft', { duration: 300 }),
     this.reverse('toRight', { duration: 300 })
   );
+
+  this.transition(
+    this.fromRoute('activities'),
+    this.toRoute('activities#monolake'),
+    this.use('toLeft', { duration: 300 }),
+    this.reverse('toRight', { duration: 300 })
+  );
 }

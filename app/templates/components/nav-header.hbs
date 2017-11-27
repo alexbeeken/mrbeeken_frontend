@@ -1,23 +1,41 @@
-<header class='nav-header'>
-  <div class='main-logo'>
-    <h1>Alex Beeken</h1>
-    <h4>Software Engineer</h4>
-    <!-- {{#link-to 'home'}} -->
-    <!-- {{/link-to}} -->
-  </div>
-  <div class='links'>
-    <a href='https://www.linkedin.com/in/alexbeeken'>
-      {{fa-icon 'linkedin-square'}}
-    </a>
-    <a href='https://www.github.com/alexbeeken'>
-      {{fa-icon 'github-square'}}
-    </a>
-  </div>
-  <!-- <div class='user-login'>
-    {{#if currentUser}}
-      <button {{action 'invalidateSession'}}>Logout</button>
-    {{else}}
-      <!-- {{#link-to 'login'}}login{{/link-to}} -->
-    {{/if}}
-  </div> -->
-</header>
+<div class='nav-all'>
+  <header class='nav-header'>
+    <div class='main-logo'>
+      <h1>Alex Beeken</h1>
+      <h4>Software Engineer</h4>
+      <!-- {{#link-to 'home'}} -->
+      <!-- {{/link-to}} -->
+    </div>
+    <div class='links'>
+      <a href='https://www.linkedin.com/in/alexbeeken'>
+        {{fa-icon 'linkedin-square'}}
+      </a>
+      <a href='https://www.github.com/alexbeeken'>
+        {{fa-icon 'github-square'}}
+      </a>
+    </div>
+    <!-- <div class='user-login'>
+      {{#if currentUser}}
+        <button {{action 'invalidateSession'}}>Logout</button>
+      {{else}}
+        <!-- {{#link-to 'login'}}login{{/link-to}} -->
+      {{/if}}
+    </div> -->
+  </header>
+  <section class='nav-menu'>
+    <article class='title' {{action 'switchBlurb' 'experience' on="mouseEnter"}}
+      style="{{if experienceActive 'font-size:1.5em'}}">
+      Experience
+    </article>
+    |
+    <article class='title' {{action 'switchBlurb' 'education' on="mouseEnter"}}
+      style="{{if educationActive 'font-size:1.5em'}}">
+      Education
+    </article>
+    |
+    <article class='title' {{action 'switchBlurb' 'activities' on="mouseEnter"}}
+      style="{{if activitiesActive 'font-size:1.5em'}}">
+      Activities
+    </article>
+  </section>
+</div>

@@ -9,9 +9,19 @@ export default Ember.Component.extend({
   cuService: service('current-user'),
   currentUser: alias('cuService.user'),
   loggedIn: alias('session.isAuthenticated'),
+  currentBlurb: 'experience',
+  experienceActive: true,
+  educationActive: false,
+  activitiesActive: false,
   actions: {
     invalidateSession() {
       this.get('session').invalidate();
+    },
+    switchBlurb(newBlurb) {
+      this.set('experienceActive', (newBlurb == 'experience'))
+      this.set('educationActive', (newBlurb == 'education'))
+      this.set('activitiesActive', (newBlurb == 'activities'))
+      this.sendAction('transitionAway', newBlurb)
     }
   },
 });
