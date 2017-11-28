@@ -18,7 +18,7 @@
           margin-top: 1.6em;
         }
         .ml-conf img {
-          margin-top: 2.2em;
+          width: 15vw;
         }
         img {
           width: 20vw;
@@ -96,12 +96,19 @@
   .description {
     animation: fadeIn 0.7s 1 alternate;
     -webkit-animation: fadeIn 0.7s 1 alternate;
-    font-size: 1.5vw;
+    font-size: 1.2em;
     padding-top: 2em;
-    width: 45vw;
+    width: 50vw;
   }
-  img {
+  .pictures {
     width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      min-width: 20em;
+      width: 30vw;
+    }
   }
 }
 
@@ -115,16 +122,48 @@
   .description {
     animation: fadeIn 0.7s 1 alternate;
     -webkit-animation: fadeIn 0.7s 1 alternate;
-    font-size: 1.5vw;
+    font-size: 1.5em;
     padding-top: 2em;
-    width: 45vw;
+    width: 50vw;
   }
   .pictures {
     width: 30vw;
     display: flex;
     justify-content: center;
+    align-items: center;
     img {
-      width: 28vw;
+      min-width: 20em;
+      width: 30vw;
     }
+  }
+}
+
+@media screen and (max-width: 548px) {
+  .mono-lake-store {
+    height: 25em;
+    margin-top: 100px;
+    .description {
+      width: 20em;
+      font-size: 1em;
+    }
+    img {
+      min-width: 20em;
+      width: 20vh;
+    }
+    flex-wrap: wrap-reverse;
+  }
+
+  .mrbeeken {
+    height: 21em;
+    margin-top: 200px;
+    .description {
+      width: 20em;
+      font-size: 1.2em;
+    }
+    img {
+      min-width: 10em;
+      width: 20vh;
+    }
+    flex-wrap: wrap-reverse;
   }
 }
