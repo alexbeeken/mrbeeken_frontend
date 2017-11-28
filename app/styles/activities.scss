@@ -139,6 +139,11 @@
 }
 
 @media screen and (max-width: 548px) {
+  .conferences {
+    height: 40vw;
+    margin-top: 10vw;
+  }
+
   .mono-lake-store {
     height: 25em;
     margin-top: 100px;
