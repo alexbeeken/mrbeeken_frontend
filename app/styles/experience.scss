@@ -19,7 +19,7 @@
     flex-wrap: wrap;
     .proficient {
       margin: 0px 2vw;
-      width: 8vw;
+      width: 11vw;
       .ruby {
         animation: fromRight 1s 1;
         animation-timing-function: ease-out;
@@ -52,7 +52,7 @@
     }
     .workedWith {
       margin: 0px 2vw;
-      width: 6.5vw;
+      width: 9vw;
       .handlebars {
         animation: fromRight 1s 1;
         animation-delay: 1.6s;
@@ -92,7 +92,11 @@
     }
     .tinkered {
       margin: 0px 2vw;
-      width: 3.5vw;
+      width: 6vw;
+      img {
+        margin-top: 2vw;
+        width: 6vw;
+      }
       .react {
         animation: fromRight 1s 1;
         animation-delay: 3.4s;
@@ -128,9 +132,6 @@
         animation-delay: 4.4s;
         animation-timing-function: ease-out;
         animation-fill-mode: both;
-      }
-      img {
-        width: 3.5vw;
       }
     }
   }

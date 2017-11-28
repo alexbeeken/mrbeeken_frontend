@@ -1,5 +1,6 @@
 .conferences {
   height: 50vh;
+  min-height: 25em;
   .conferences-row {
     padding: $padding;
     .pictures {
@@ -27,7 +28,7 @@
       .conf-note {
         animation: fadeIn 0.7s 1 alternate;
         -webkit-animation: fadeIn 0.7s 1 alternate;
-        font-size: 1em;
+        font-size: 1.5em;
       }
     }
     .activity-note {
@@ -142,6 +143,9 @@
   .conferences {
     height: 40vw;
     margin-top: 10vw;
+    .conf-note {
+      font-size: 0.5em;
+    }
   }
 
   .mono-lake-store {
