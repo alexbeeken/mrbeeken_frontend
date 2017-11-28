@@ -11,6 +11,24 @@
     animation: fadeIn 0.7s 1 alternate;
     -webkit-animation: fadeIn 0.7s 1 alternate;
   }
+  .proficients-title {
+    animation: fadeIn 1s 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+  }
+  .workedWiths-title {
+    animation: fadeIn 1s 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-delay: 2.3s;
+  }
+  .tinkereds-title {
+    animation: fadeIn 1s 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-delay: 3.7s;
+  }
   .proficients, .workedWiths, .tinkereds {
     width: 100%;
     padding: $padding;
