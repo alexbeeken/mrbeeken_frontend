@@ -1,8 +1,10 @@
 .nav-all {
-  width: 98%;
   position: fixed;
   z-index: 100;
+  width: 100%;
+  padding-right: $padding;
   .nav-header {
+    width: 98%;
     background-color: #abcfe7;
     border: 0.02vw solid gray;
     display: flex;
@@ -36,6 +38,12 @@
         color: black;
       }
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-all{
+    width: 98%;
   }
 }
 
