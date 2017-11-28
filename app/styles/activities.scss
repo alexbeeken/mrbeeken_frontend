@@ -10,9 +10,9 @@
       justify-content: space-between;
       text-align: center;
       .conf-icon {
-        width: 20em;
+        width: 25vw;
         .ember-conf, .ruby-on-ales, .ml-conf {
-          height: 10.5em;
+          height: 20vw;
         }
         .ruby-on-ales img {
           margin-top: 1.6em;
@@ -21,7 +21,7 @@
           margin-top: 2.2em;
         }
         img {
-          width: 15em;
+          width: 20vw;
         }
       }
       .conf-note {
@@ -92,16 +92,16 @@
   justify-content: space-around;
   flex-wrap: wrap-reverse;
   text-align: center;
-  height: 20em;
+  height: 50vh;
   .description {
     animation: fadeIn 0.7s 1 alternate;
     -webkit-animation: fadeIn 0.7s 1 alternate;
-    font-size: 1.5em;
+    font-size: 1.5vw;
     padding-top: 2em;
-    width: 30em;
+    width: 45vw;
   }
   img {
-    width: 25em;
+    width: 30vw;
   }
 }
 
@@ -111,20 +111,20 @@
   justify-content: space-around;
   flex-wrap: wrap-reverse;
   text-align: center;
-  height: 20em;
+  height: 50vh;
   .description {
     animation: fadeIn 0.7s 1 alternate;
     -webkit-animation: fadeIn 0.7s 1 alternate;
-    font-size: 1.5em;
+    font-size: 1.5vw;
     padding-top: 2em;
-    width: 30em;
+    width: 45vw;
   }
   .pictures {
-    width: 25em;
+    width: 30vw;
     display: flex;
     justify-content: center;
     img {
-      width: 20em;
+      width: 28vw;
     }
   }
 }
