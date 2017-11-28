@@ -25,17 +25,23 @@
   <section class='nav-menu'>
     <article class='title' {{action 'switchBlurb' 'experience' on="mouseEnter"}}
       style="{{if experienceActive 'font-size:1.5em'}}">
-      Experience
+      {{#link-to 'experience'}}
+        Experience
+      {{/link-to}}
     </article>
     |
     <article class='title' {{action 'switchBlurb' 'education' on="mouseEnter"}}
       style="{{if educationActive 'font-size:1.5em'}}">
-      Education
+      {{#link-to 'education'}}
+        Education
+      {{/link-to}}
     </article>
     |
     <article class='title' {{action 'switchBlurb' 'activities' on="mouseEnter"}}
       style="{{if activitiesActive 'font-size:1.5em'}}">
-      Activities
+      {{#link-to 'activities'}}
+        Activities
+      {{/link-to}}
     </article>
   </section>
 </div>
