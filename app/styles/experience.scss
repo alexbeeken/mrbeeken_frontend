@@ -139,3 +139,22 @@
     transform: translateX(1200px);
   }
 }
+
+@media screen and (max-width: 548px) {
+  .experience-section {
+    .proficients, .workedWiths, .tinkereds {
+      .proficient {
+        width: 16vw;
+      }
+      .workedWith {
+        width: 14vw;
+      }
+      .tinkered {
+        width: 12vw;
+        img {
+          width: 12vw;
+        }
+      }
+    }
+  }
+}
