@@ -12,6 +12,12 @@
 }
 
 .main-nav {
+  border: 0.02vw solid gray;
+  border-right: 0.2vw solid gray;
+  color: black;
+  font-family: 'Oswald';
+  height: 100px;
+  width: 8em;
   .menu-header {
     height: 2.5em;
     border-bottom: 0.01em solid $light-border;
@@ -38,12 +44,7 @@
       }
     }
   }
-  border: 0.02vw solid gray;
-  border-right: 0.2vw solid gray;
-  color: black;
-  font-family: 'Oswald';
-  height: 100vh;
-  width: 8em;
+
   li a {
     color: #000;
   }
