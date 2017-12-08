@@ -18,7 +18,7 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
 
     return this._super(...arguments);
   },
-  emailUnique(email, params) {
+  emailUnique(email) {
     const url = `${this.host}/users/unique/${email}`
     return this.ajax(url, 'GET');
   }

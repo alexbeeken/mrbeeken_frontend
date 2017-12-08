@@ -10,7 +10,6 @@ Router.map(function() {
   this.route('users');
   this.route('login', { path: '/login' });
   this.route('register', { path: '/register' });
-  this.route('home');
   this.route('admin');
   this.route('about');
   this.route('videos');
