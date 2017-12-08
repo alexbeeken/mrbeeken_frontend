@@ -1,9 +1,5 @@
 import Ember from 'ember';
 
-const { inject, computed } = Ember;
-const { service, controller } = inject;
-const { alias } = computed;
-
 export default Ember.Component.extend({
   didReceiveAttrs() {
     this._super(...arguments)
@@ -21,7 +17,7 @@ export default Ember.Component.extend({
   thumbnail: null,
   post: null,
   actions: {
-    savePost(params) {
+    savePost() {
       let post = this.get('post')
       post.set('audio', this.get('audio'))
       post.set('content', this.get('content'))

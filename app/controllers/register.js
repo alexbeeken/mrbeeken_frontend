@@ -1,8 +1,7 @@
 import Ember from 'ember';
 
 const { inject, computed } = Ember;
-const { service, controller } = inject;
-const { alias } = computed;
+const { service } = inject;
 
 const check_pw_match = function(pw1, pw2) {
   return (pw1 == pw2)
@@ -84,7 +83,7 @@ export default Ember.Controller.extend({
         return this.get('session').authenticate('authenticator:jwt', credentials);
       }).catch((reason) => {
         this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
-      });;
+      });
     }
   }
 });

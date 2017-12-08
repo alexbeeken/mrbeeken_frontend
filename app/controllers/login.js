@@ -1,8 +1,7 @@
 import Ember from 'ember';
 
-const { inject, computed } = Ember;
-const { service, controller } = inject;
-const { alias } = computed;
+const { inject } = Ember;
+const { service } = inject;
 
 export default Ember.Controller.extend({
   session: service(),
@@ -12,9 +11,7 @@ export default Ember.Controller.extend({
   actions: {
     authenticate() {
       var credentials = this.getProperties('identification', 'password')
-
-      var that = this;
-      return this.get('session').authenticate('authenticator:jwt', credentials).then((result) => {
+      return this.get('session').authenticate('authenticator:jwt', credentials).then(() => {
         this.get('flashMessages').info('login successful');
       }).catch((reason) => {
         this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);

@@ -1,8 +1,6 @@
 import Ember from 'ember';
 
-const { inject, computed } = Ember;
-const { service } = inject;
-const { alias } = computed;
+const { computed } = Ember;
 
 export default Ember.Component.extend({
   post: null,

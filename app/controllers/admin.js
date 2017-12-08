@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 const { inject, computed } = Ember;
-const { service, controller } = inject;
+const { service } = inject;
 
 export default Ember.Controller.extend({
   store: service(),
@@ -10,11 +10,11 @@ export default Ember.Controller.extend({
   }),
   actions: {
     deletePost(id) {
-      
+
       this.get('store').findRecord('post', id, { backgroundReload: false }).then((post) => {
         post.deleteRecord();
         post.get('isDeleted'); // => true
-        post.save().then((result) => {
+        post.save().then(() => {
           this.get('flashMessages').info('post deleted');
         }).catch((reason) => {
           this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
