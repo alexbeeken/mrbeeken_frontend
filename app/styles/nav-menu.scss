@@ -1,4 +1,9 @@
 .show-menu {
+  position: fixed;
+  width: 120px;
+  z-index: 15;
+  .liquid-child {
+  }
   button {
     font-size: 13px;
     border-radius: 2px;
@@ -12,12 +17,12 @@
 }
 
 .main-nav {
+  background-color: white;
   border: 0.02vw solid gray;
   border-right: 0.2vw solid gray;
   color: black;
   font-family: 'Oswald';
-  height: 100px;
-  width: 8em;
+  height: 100vh;
   .menu-header {
     height: 2.5em;
     border-bottom: 0.01em solid $light-border;
