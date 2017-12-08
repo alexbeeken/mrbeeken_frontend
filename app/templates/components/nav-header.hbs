@@ -8,7 +8,9 @@
     {{#if currentUser}}
       <button {{action 'invalidateSession'}}>Logout</button>
     {{else}}
-      <!-- {{#link-to 'login'}}login{{/link-to}} -->
+      <div class='login-button'>
+        {{#link-to 'login'}}login{{/link-to}}
+      </div>
     {{/if}}
   </div>
 </header>

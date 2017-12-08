@@ -12,11 +12,16 @@
     }
   }
   .user-login {
+    border: 1px 1px solid black;
+    padding-top: 1em;
     a {
-      font-family: 'Merriweather';
+      padding-right: 1em;
+      float: right;
+      color: #000;
+      font-family: 'Oswald';
       text-decoration: none;
     }
-    font-size: 2vw;
+    font-size: 1em;
     width: 20vw;
   }
 }
