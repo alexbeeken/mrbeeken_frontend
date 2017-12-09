@@ -17,9 +17,24 @@
     <li>
       {{component 'nav-link' text='about' path='about' icon='info-circle'}}
     </li>
-    <li>
-      {{component 'nav-link' text='login' path='login' icon='info-circle'}}
-    </li>
+    {{#if currentUser}}
+      <li>
+        <a href="#" {{action invalidateSession preventDefault=true}}>
+          <div class='nav-link'>
+            <div class='nav-link-icon'>
+              {{fa-icon 'sign-out'}}
+            </div>
+            <div class='nav-link-text'>
+              logout
+            </div>
+          </div>
+        </a>
+      </li>
+    {{else}}
+      <li>
+        {{component 'nav-link' text='login' path='login' icon='sign-in'}}
+      </li>
+    {{/if}}
     {{#if superuser}}
       <li>
         {{component 'nav-link' text='admin' path='admin' icon='cog'}}

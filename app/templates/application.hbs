@@ -4,7 +4,7 @@
 {{/each}}
 <div class='body-space'>
   {{#liquid-if isMenuActive class='show-menu'}}
-    {{component 'nav-menu' dismissMenu='dismissMenu'}}
+    {{component 'nav-menu' dismissMenu='dismissMenu' invalidateSession='invalidateSession'}}
   {{/liquid-if}}
   <div class='main-content'>
     {{outlet}}

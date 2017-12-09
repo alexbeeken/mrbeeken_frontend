@@ -11,6 +11,9 @@ export default Ember.Component.extend({
   actions: {
     dismissMenu() {
       this.sendAction('dismissMenu')
+    },
+    invalidateSession() {
+      this.sendAction('invalidateSession')
     }
   }
 });
