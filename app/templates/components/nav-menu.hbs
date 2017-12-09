@@ -17,6 +17,11 @@
     <li>
       {{component 'nav-link' text='about' path='about' icon='info-circle'}}
     </li>
+    {{#if superuser}}
+      <li>
+        {{component 'nav-link' text='admin' path='admin' icon='cog'}}
+      </li>
+    {{/if}}
     {{#if currentUser}}
       <li>
         <a href="#" {{action invalidateSession preventDefault=true}}>
@@ -33,11 +38,6 @@
     {{else}}
       <li>
         {{component 'nav-link' text='login' path='login' icon='sign-in'}}
-      </li>
-    {{/if}}
-    {{#if superuser}}
-      <li>
-        {{component 'nav-link' text='admin' path='admin' icon='cog'}}
       </li>
     {{/if}}
   </ul>

@@ -14,7 +14,11 @@ export default Ember.Controller.extend({
   isMenuActive: false,
   actions: {
     invalidateSession() {
-      this.get('session').invalidate();
+      return this.get('session').invalidate().then(() => {
+        this.get('flashMessages').info('You have been logged out.');
+      }).catch((reason) => {
+        this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
+      });
     },
     dismissMenu() {
       this.set('isMenuActive', false)

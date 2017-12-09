@@ -1,0 +1,13 @@
+.alert {
+  text-align: center;
+  font-family: sans-serif;
+  &.alert-success {
+    border: 0.5em solid $flash-success-color;
+  }
+  &.alert-danger {
+    border: 0.5em solid $flash-danger-color;
+  }
+  &.alert-info {
+    border: 0.5em solid $flash-info-color;
+  }
+}
