@@ -1,30 +1,29 @@
-{{#liquid-if show class="show-menu"}}
-    <nav class='main-nav'>
-      <div class='menu-header'>
-        <div class='menu-title'>
-          Menu
-        </div>
-        <div class='dismiss-menu'>
-          <button {{action 'dismissMenu'}}>{{fa-icon 'times'}}</button>
-        </div>
-      </div>
-      <ul>
-        <li>
-          {{component 'nav-link' text='news' path='posts' icon='newspaper-o'}}
-        </li>
-        <li>
-          {{component 'nav-link' text='videos' path='videos' icon='video-camera'}}
-        </li>
-        <li>
-          {{component 'nav-link' text='about' path='about' icon='info-circle'}}
-        </li>
-        {{#if superuser}}
-          <li>
-            {{component 'nav-link' text='admin' path='admin' icon='cog'}}
-          </li>
-        {{/if}}
-      </ul>
-    </nav>
-{{else}}
-  <button {{action 'showMenu'}}>{{fa-icon 'bars'}}</button>
-{{/liquid-if}}
+<nav class='main-nav'>
+  <div class='menu-header'>
+    <div class='menu-title'>
+      Menu
+    </div>
+    <div class='dismiss-menu'>
+      <button {{action 'dismissMenu'}}>{{fa-icon 'times'}}</button>
+    </div>
+  </div>
+  <ul>
+    <li>
+      {{component 'nav-link' text='news' path='posts' icon='newspaper-o'}}
+    </li>
+    <li>
+      {{component 'nav-link' text='videos' path='videos' icon='video-camera'}}
+    </li>
+    <li>
+      {{component 'nav-link' text='about' path='about' icon='info-circle'}}
+    </li>
+    <li>
+      {{component 'nav-link' text='login' path='login' icon='info-circle'}}
+    </li>
+    {{#if superuser}}
+      <li>
+        {{component 'nav-link' text='admin' path='admin' icon='cog'}}
+      </li>
+    {{/if}}
+  </ul>
+</nav>

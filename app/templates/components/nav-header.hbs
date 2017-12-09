@@ -4,15 +4,7 @@
       {{inline-svg 'svg/main-logo'}}
     {{/link-to}}
   </div>
-  <div class='user-login'>
-    {{#if currentUser}}
-      <div class='logout-button'>
-        <a href='#' {{action 'invalidateSession' preventDefault=true}}>Logout</a>
-      </div>
-    {{else}}
-      <div class='login-button'>
-        {{#link-to 'login'}}login{{/link-to}}
-      </div>
-    {{/if}}
+  <div class='menu-toggle'>
+    <a href="# "{{action 'toggleMenu'}} preventDefault=true>{{fa-icon 'bars'}}</a>
   </div>
 </header>

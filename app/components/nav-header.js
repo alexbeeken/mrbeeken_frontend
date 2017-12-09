@@ -9,9 +9,13 @@ export default Ember.Component.extend({
   cuService: service('current-user'),
   currentUser: alias('cuService.user'),
   loggedIn: alias('session.isAuthenticated'),
+  isMenuActive: false,
   actions: {
     invalidateSession() {
       this.get('session').invalidate();
+    },
+    toggleMenu() {
+      this.sendAction('toggleMenu')
     }
   },
 });

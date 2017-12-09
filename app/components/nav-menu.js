@@ -8,13 +8,9 @@ export default Ember.Component.extend({
   cuService: service('current-user'),
   currentUser: alias('cuService.user'),
   superuser: alias('cuService.user.superuser'),
-  show: false,
   actions: {
     dismissMenu() {
-      this.set('show', false)
-    },
-    showMenu() {
-      this.set('show', true)
+      this.sendAction('dismissMenu')
     }
   }
 });

@@ -12,19 +12,46 @@
       width: 15em;
     }
   }
-  .user-login {
-    border: 1px 1px solid black;
-    padding-top: 1em;
-    .login-button, .logout-button {
-      padding-right: 1em;
-      float: right;
-      font-family: 'Oswald';
-      font-size: 1.2em;
-      a {
-        color: #000;
-        text-decoration: none;
+  .menu-toggle {
+    float: right;
+    font-family: 'Oswald';
+    font-size: 1.2em;
+    text-align: center;
+    display: flex;
+    a {
+      margin: auto;
+      text-decoration: none;
+      color: black;
+      height: 40px;
+      width: 40px;
+      font-size: 1.5em;
+      &:active {
+        animation:         boop 0.1s;
+        -webkit-animation: boop 0.1s;
+        -moz-animation:    boop 0.1s;
+        -o-animation:      boop 0.1s;
       }
     }
-    width: 20vw;
   }
+}
+
+@-webkit-keyframes boop {
+  0%   { transform: scale(1); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+@-moz-keyframes boop {
+  0%   { transform: scale(1); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+@-o-keyframes boop {
+  0%   { transform: scale(1); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+@keyframes boop {
+  0%   { transform: scale(1); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(1); }
 }

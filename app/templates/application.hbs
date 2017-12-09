@@ -1,9 +1,11 @@
-{{component 'nav-header'}}
+{{component 'nav-header' toggleMenu='toggleMenu'}}
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
 <div class='body-space'>
-  {{component 'nav-menu'}}
+  {{#liquid-if isMenuActive class='show-menu'}}
+    {{component 'nav-menu' dismissMenu='dismissMenu'}}
+  {{/liquid-if}}
   <div class='main-content'>
     {{outlet}}
   </div>
