@@ -1,9 +1,26 @@
-<form {{action "register" on="submit"}}>
-  {{input type="email" value=identification value=identification key-up="checkEmail" placeholder="enter email"}}
-  {{input type="password" value=password placeholder="enter password"}}
-  {{input type="password" value=passwordConfirm placeholder="confirm password"}}
-  <button type="submit" disabled={{inputInvalid}}>Register</button>
-</form>
+<div class='login-window'>
+  <form {{action "register" on="submit"}}>
+    <div class='fields'>
+      <div class='field'>
+        <label for='identification'>Email</label>
+        {{input type="email" value=identification value=identification key-up="checkEmail" placeholder="email@example.com"}}
+      </div>
+      <div class='field'>
+        <label for='password'>Password</label>
+        {{input type="password" value=password placeholder="password"}}
+      </div>
+      <div class='field'>
+        <label for='passwordConfirmation'>Password Confirm</label>
+        {{input type="password" value=passwordConfirm placeholder="password"}}
+      </div>
+      <div class='actions'>
+        <div class='submit'>
+          <button type='submit' disabled={{inputInvalid}}>Register</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
 
 {{#if passwordsDiff}}
   <p>Passwords do not match.</p>

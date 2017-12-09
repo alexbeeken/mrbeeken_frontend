@@ -1,0 +1,48 @@
+.login-window {
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .fields {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    .field {
+      text-align: left;
+      label {
+        font-size: 0.8em;
+        float: left;
+        width: 100%;
+      }
+      input {
+        float: left;
+        margin-bottom: 20px;
+        width: 100%;
+        border-radius: 6px;
+        height: 20px;
+        font-size: 0.8em;
+      }
+    }
+  }
+  .actions {
+    width: 200px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .register-link {
+      height: 30px;
+    }
+    .submit {
+      button {
+        font-size: 1.3em;
+        background-color: $positive-green;
+        border-radius: 5px;
+        box-shadow: none;
+        width: 200px;
+        height: 50px;
+      }
+    }
+  }
+}

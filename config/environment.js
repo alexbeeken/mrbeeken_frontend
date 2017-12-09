@@ -60,8 +60,8 @@ module.exports = function(environment) {
 
   ENV['ember-simple-auth'] = {
     authorizer: 'authorizer:jwt',
-    routeIfAlreadyAuthenticated: '/home',
-    routeAfterAuthentication: '/home'
+    routeIfAlreadyAuthenticated: '/',
+    routeAfterAuthentication: '/'
   };
   ENV['ember-simple-auth-token'] = {
     refreshAccessTokens: true,
