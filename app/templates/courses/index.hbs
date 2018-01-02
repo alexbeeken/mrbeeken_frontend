@@ -1,0 +1,10 @@
+<h1> Courses </h1>
+
+<section class='feed'>
+  {{#each courses as |course|}}
+    {{#link-to "course" course.id}}
+      <h1>{{course.title}}</h1>
+    {{/link-to}}
+    <p>{{course.summary}}</p>
+  {{/each}}
+</section>

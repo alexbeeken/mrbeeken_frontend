@@ -19,6 +19,18 @@ Router.map(function() {
   this.resource('post', { path: '/post/:post_id' }, function() {
     this.route('edit');
   });
+  this.resource('courses', function() {
+    this.route('new');
+  });
+  this.resource('course', { path: '/course/:course_id' }, function() {
+    this.resource('units', function() {
+      this.route('new')
+    }),
+    this.resource('units', { path: '/unit/:unit_id' }, function() {
+      this.route('edit')
+    }),
+    this.route('edit');
+  });
 });
 
 export default Router;

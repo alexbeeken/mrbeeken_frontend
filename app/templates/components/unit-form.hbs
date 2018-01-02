@@ -1,0 +1,24 @@
+<h1>NEW UNIT FORM</h1>
+
+<div class='unit-form'>
+  <form {{action 'saveUnit' on='submit'}}>
+    <div class='unit-form-input'>
+      {{input
+        type='text'
+        pattern='.{3,120}'
+        required=true
+        placeholder='Title'
+        value=title}}
+    </div>
+
+    <div class='unit-form-input'>
+      {{textarea
+        required=true
+        placeholder='Summary'
+        value=summary}}
+    </div>
+    <div class='unit-form-input'>
+      <button type='submit'>Save</button>
+    </div>
+  </form>
+</div>

@@ -1,5 +1,7 @@
 <h1> Admin Page </h1>
 
+<h2> Posts </h2>
+
 {{#link-to "posts.new"}}
   <button>New Post</button>
 {{/link-to}}
@@ -9,7 +11,7 @@
     <tr>
       <td>
         {{#link-to "post" post.id}}
-          <h1>{{post.title}}</h1>
+          {{post.title}}
         {{/link-to}}
       </td>
       <td>
@@ -20,6 +22,36 @@
       <td>
         {{#confirm-dialog}}
           <button {{action "deletePost" post.id}}>
+            {{fa-icon "times"}}
+          </button>
+        {{/confirm-dialog}}
+      </td>
+    </tr>
+  {{/each}}
+</table>
+
+<h2> Courses </h2>
+
+{{#link-to "courses.new"}}
+  <button>New Course</button>
+{{/link-to}}
+
+<table>
+  {{#each courses as |course|}}
+    <tr>
+      <td>
+        {{#link-to "course" course.id}}
+          {{course.title}}
+        {{/link-to}}
+      </td>
+      <td>
+        {{#link-to "course.edit" course.id}}
+          <h3>edit</h3>
+        {{/link-to}}
+      </td>
+      <td>
+        {{#confirm-dialog}}
+          <button {{action "deleteCourse" course.id}}>
             {{fa-icon "times"}}
           </button>
         {{/confirm-dialog}}
