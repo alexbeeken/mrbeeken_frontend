@@ -15,18 +15,18 @@
         placeholder='Summary'
         value=summary}}
     </div>
+    <div class='course-units'>
+      {{#link-to 'units.new' course.id}}
+      <h3>New Unit</h3>
+      {{/link-to}}
+      <ol>
+        {{#each course.units as |unit|}}
+        <li>unit.title</li>
+        {{/each}}
+      </ol>
+    </div>
     <div class='course-form-input'>
       <button type='submit'>Save</button>
     </div>
   </form>
-  <div class='course-units'>
-    {{#link-to 'units.new' course.id}}
-      <h3>New Unit</h3>
-    {{/link-to}}
-    <ol>
-      {{#each course.units as |unit|}}
-        <li>unit.title</li>
-      {{/each}}
-    </ol>
-  </div>
 </div>
