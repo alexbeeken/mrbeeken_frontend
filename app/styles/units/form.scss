@@ -1,9 +1,9 @@
-.course-form {
+.unit-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  .course-form-input {
+  .unit-form-input {
     text-align: center;
     margin: 1em;
     input, textarea {
@@ -20,9 +20,5 @@
       background-color: green;
       font-weight: bold;
     }
-  }
-  .course-units {
-    text-align: center;
-    margin: 1em;
   }
 }
