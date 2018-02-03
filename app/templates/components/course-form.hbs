@@ -16,17 +16,22 @@
         value=summary}}
     </div>
     <div class='course-units'>
-      {{#link-to 'units.new' course.id}}
-      <h3>New Unit</h3>
-      {{/link-to}}
-      <ol>
-        {{#each course.units as |unit|}}
-        <li>unit.title</li>
-        {{/each}}
-      </ol>
+      {{#if course.id}}
+        {{#link-to 'units.new' course.id}}
+          <h3>New Unit</h3>
+        {{/link-to}}
+        <ol>
+          {{#each course.units as |unit|}}
+            <li>unit.title</li>
+          {{/each}}
+        </ol>
+      {{/if}}
     </div>
     <div class='course-form-input'>
       <button type='submit'>Save</button>
     </div>
+    {{#link-to 'admin'}}
+      <h3>Go Back</h3>
+    {{/link-to}}
   </form>
 </div>
