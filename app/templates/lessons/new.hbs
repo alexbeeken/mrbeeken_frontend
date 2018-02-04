@@ -1,0 +1,7 @@
+<div class='lesson-form-unit-course-title'>
+  <h3>New Lesson for {{unit.title}}</h3>
+</div>
+{{lesson-form lesson=lesson doneSaving='doneSaving'}}
+{{#link-to 'unit.edit' unit.id}}
+  <h3>Go Back</h3>
+{{/link-to}}

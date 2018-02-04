@@ -15,9 +15,9 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
     let course = this.get('courseController.model')
     let unit = this.get('unitController.model')
     if (singleRequestTypes.includes(requestType)) {
-      return "http://localhost:4000/api/v1/courses/" + course.id + "/units/" + unit.id + "/assessments/" + id;
+      return "http://localhost:4000/api/v1/courses/" + course.id + "/units/" + unit.id + "/lessons/" + id;
     } else {
-      return "http://localhost:4000/api/v1/courses/" + course.id + "/units/" + unit.id + "/assessments";
+      return "http://localhost:4000/api/v1/courses/" + course.id + "/units/" + unit.id + "/lessons";
     }
   }
 })

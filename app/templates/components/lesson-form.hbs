@@ -1,0 +1,22 @@
+<div class='lesson-form'>
+  <form {{action 'saveLesson' on='submit'}}>
+    <div class='lesson-form-input'>
+      {{input
+        type='text'
+        pattern='.{3,120}'
+        required=true
+        placeholder='Title'
+        value=title}}
+    </div>
+
+    <div class='lesson-form-input'>
+      {{textarea
+        required=true
+        placeholder='Content'
+        value=content}}
+    </div>
+    <div class='lesson-form-input'>
+      <button type='submit'>Save</button>
+    </div>
+  </form>
+</div>
