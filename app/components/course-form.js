@@ -1,5 +1,8 @@
 import Ember from 'ember';
 
+const { inject, computed } = Ember;
+const { service } = inject;
+
 export default Ember.Component.extend({
   didReceiveAttrs() {
     this._super(...arguments)
@@ -10,6 +13,7 @@ export default Ember.Component.extend({
   title: null,
   content: null,
   course: null,
+  store: service(),
   actions: {
     saveCourse() {
       let course = this.get('course')
