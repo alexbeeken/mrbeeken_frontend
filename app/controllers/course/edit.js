@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
   actions: {
     doneSaving() {
       this.get('flashMessages').info('Course saved successfully!');
-      this.transitionToRoute('courses');
+      this.transitionToRoute('admin');
     }
   }
 });

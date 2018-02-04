@@ -5,7 +5,7 @@ const { inject } = Ember;
 const { service, controller } = inject;
 
 const singleRequestTypes =
-  ['updateRecord', 'findRecord']
+  ['updateRecord', 'findRecord', 'deleteRecord']
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   authorizer: 'authorizer:token',

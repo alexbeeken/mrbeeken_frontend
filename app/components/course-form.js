@@ -26,15 +26,17 @@ export default Ember.Component.extend({
       })
     },
     deleteUnit(unit_id) {
-      this.get('store').findRecord('unit', unit_id, { backgroundReload: false }).then((unit) => {
-        unit.deleteRecord();
-        unit.get('isDeleted'); // => true
-        unit.save().then(() => {
-          this.get('flashMessages').info('unit deleted');
-        }).catch((reason) => {
-          this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
-        });
-      })
+      if (confirm("Are you sure you want to delete this unit?")) {
+        this.get('store').findRecord('unit', unit_id, { backgroundReload: false }).then((unit) => {
+          unit.deleteRecord();
+          unit.get('isDeleted'); // => true
+          unit.save().then(() => {
+            this.get('flashMessages').info('unit deleted');
+          }).catch((reason) => {
+            this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
+          });
+        })
+      }
     }
   }
 })
