@@ -1,0 +1,15 @@
+<div class='assessment-form'>
+  <form {{action 'saveAssessment' on='submit'}}>
+    <div class='assessment-form-input'>
+      {{input
+        type='text'
+        pattern='.{3,120}'
+        required=true
+        placeholder='Title'
+        value=title}}
+    </div>
+    <div class='assessment-form-input'>
+      <button type='submit'>Save</button>
+    </div>
+  </form>
+</div>

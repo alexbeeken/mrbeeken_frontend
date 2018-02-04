@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
   unitController: controller('unit'),
   unit: alias('unitController.model'),
   store: service(),
-  unit: computed(function() {
+  assessment: computed(function() {
     return this.get('store').createRecord('assessment')
   }),
   actions: {

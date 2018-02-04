@@ -19,4 +19,32 @@
       <button type='submit'>Save</button>
     </div>
   </form>
+  {{#if unit.id}}
+    {{#link-to 'assessments.new' unit.id}}
+      <h3>New Assessment</h3>
+    {{/link-to}}
+    <ol>
+      {{#each unit.assessments as |assessment|}}
+        <li>
+          {{#link-to 'assessment.edit' assessment.id}}
+            {{assessment.title}}
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ol>
+  {{/if}}
+  {{#if unit.id}}
+    {{#link-to 'lessons.new' unit.id}}
+      <h3>New Lesson</h3>
+    {{/link-to}}
+    <ol>
+      {{#each unit.lessons as |lesson|}}
+        <li>
+          {{#link-to 'lesson.edit' lesson.id}}
+            {{lesson.title}}
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ol>
+  {{/if}}
 </div>
