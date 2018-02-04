@@ -26,6 +26,11 @@
               {{#link-to 'unit.edit' unit.id}}
                 {{unit.title}}
               {{/link-to}}
+              {{#confirm-dialog}}
+                <button {{action "deleteUnit" unit.id}}>
+                  {{fa-icon "times"}}
+                </button>
+              {{/confirm-dialog}}
             </li>
           {{/each}}
         </ol>
