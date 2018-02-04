@@ -8,7 +8,6 @@ export default Ember.Controller.extend({
   courseController: controller('course'),
   course: alias('courseController.model'),
   store: service(),
-  unit: alias('model'),
   actions: {
     doneSaving() {
       this.get('flashMessages').info('Unit saved successfully!');

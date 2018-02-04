@@ -29,6 +29,9 @@
           {{#link-to 'assessment.edit' assessment.id}}
             {{assessment.title}}
           {{/link-to}}
+          <button {{action "deleteAssessment" assessment.id}}>
+            {{fa-icon "times"}}
+          </button>
         </li>
       {{/each}}
     </ol>
@@ -43,6 +46,9 @@
           {{#link-to 'lesson.edit' lesson.id}}
             {{lesson.title}}
           {{/link-to}}
+          <button {{action "deleteLesson" lesson.id}}>
+            {{fa-icon "times"}}
+          </button>
         </li>
       {{/each}}
     </ol>
