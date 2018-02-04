@@ -1,1 +1,7 @@
-{{course-form course=course doneSaving='doneSaving'}}
+<div class='course-form-title'>
+  <h3>Editing Course: {{model.title}}</h3>
+</div>
+{{course-form course=model doneSaving='doneSaving'}}
+{{#link-to 'admin'}}
+  <h3>Go Back</h3>
+{{/link-to}}
