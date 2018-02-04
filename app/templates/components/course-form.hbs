@@ -22,7 +22,11 @@
         {{/link-to}}
         <ol>
           {{#each course.units as |unit|}}
-            <li>{{unit.title}}</li>
+            <li>
+              {{#link-to 'unit.edit' unit.id}}
+                {{unit.title}}
+              {{/link-to}}
+            </li>
           {{/each}}
         </ol>
       {{/if}}
