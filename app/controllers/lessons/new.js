@@ -9,7 +9,9 @@ export default Ember.Controller.extend({
   unit: alias('unitController.model'),
   store: service(),
   lesson: computed(function() {
-    return this.get('store').createRecord('lesson')
+    return this.get('store').createRecord('lesson', {
+      unit: this.get('unit')
+    })
   }),
   actions: {
     doneSaving() {

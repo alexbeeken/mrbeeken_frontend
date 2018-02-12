@@ -1,0 +1,44 @@
+.course-show-enroll {
+  width: 100%;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .logged-out {
+    align-items: center;
+    background: $positive-green;
+    display: flex;
+    height: 2em;
+    justify-content: space-between;
+    padding-left: 1em;
+  }
+}
+
+.course-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .course-show-title {
+    font-size: 2em;
+    height: 2em;
+    margin-top: 0.5em;
+    text-align: center;
+    width: 100%;
+  }
+  .course-show-summary {
+    font-size: 1em;
+    height: 2em;
+    margin-top: 1em;
+    margin-left: 1em;
+    text-align: left;
+    width: 100%;
+  }
+  .course-show-structure {
+    text-align: left;
+    width: 100%;
+    .course-unit {
+      text-align: left;
+    }
+  }
+}

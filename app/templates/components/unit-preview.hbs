@@ -1,0 +1,23 @@
+<div class='course-unit'>
+  {{unit.title}}
+  <div class='lessons'>
+    Lessons
+    <ul>
+      {{#each lessons as |lesson|}}
+        <li>
+          {{lesson.title}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class='assessments'>
+    Assessments
+    <ul>
+      {{#each assessments as |assessment|}}
+        <li>
+          {{assessment.title}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

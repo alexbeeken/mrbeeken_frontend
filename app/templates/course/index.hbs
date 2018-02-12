@@ -1,3 +1,34 @@
-<p>Login or Sign up for an account to take this course.</p>
-<h1>{{model.title}}</h1>
-<p>{{model.summary}}</p>
+<div class='course-show-enroll'>
+  {{#if currentUser}}
+    <div class='logged-in'>
+      <a href="#">
+        enroll in this course
+      </a>
+    </div>
+  {{else}}
+    <div class='logged-out'>
+      {{#link-to 'login'}}
+        <u>Login</u> or <u>Sign up</u> for an account to take this course.
+      {{/link-to}}
+    </div>
+  {{/if}}
+</div>
+<section class='course-show'>
+  <div class='course-show-title'>
+    {{model.title}}
+    <hr>
+  </div>
+  <div class='course-show-summary'>
+    {{model.summary}}
+  </div>
+  <div class='course-show-structure'>
+    Units
+    <ul>
+      {{#each model.units as |unit|}}
+        <li>
+          {{unit-preview unit=unit}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>

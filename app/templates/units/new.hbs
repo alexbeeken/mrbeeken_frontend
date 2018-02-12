@@ -1,7 +1,7 @@
 <div class='unit-form-course-title'>
   <h3>New Unit for {{course.title}}</h3>
 </div>
-{{unit-form unit=unit doneSaving='doneSaving'}}
+{{unit-form unit=unit course=course doneSaving='doneSaving'}}
 {{#link-to 'course.edit' course.id}}
   <h3>Go Back</h3>
 {{/link-to}}
