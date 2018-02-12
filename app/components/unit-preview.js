@@ -1,15 +1,24 @@
 import Ember from 'ember';
 
-const { inject, computed } = Ember;
-const { service } = inject;
+const { computed, inject } = Ember;
 const { alias } = computed;
+const { service } = inject;
 
 export default Ember.Component.extend({
   store: service(),
-  unit: computed('unit_id', function() {
-    this.get('store').findRecord('unit', this.get('unit_id'))
+  assessments: computed('unit', function(){
+    return this.get('store').query('assessment', {
+      filter: {
+        "unit-id" : this.get('unit.id')
+      }
+    });
   }),
-  assessments: alias('unit.assessments'),
-  lessons: alias('unit.lessons'),
-  unit_id: null
+  lessons: computed('unit', function(){
+    return this.get('store').query('lesson', {
+      filter: {
+        "unit-id" : this.get('unit.id')
+      }
+    });
+  }),
+  unit: null
 });
