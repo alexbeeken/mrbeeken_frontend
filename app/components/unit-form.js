@@ -18,7 +18,7 @@ export default Ember.Component.extend({
       let unit = this.get('unit')
       unit.set('summary', this.get('summary'))
       unit.set('title', this.get('title'))
-      unit.save(unit).then(() => {
+      unit.save().then(() => {
         this.sendAction('doneSaving');
       }).catch((reason) => {
         this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
