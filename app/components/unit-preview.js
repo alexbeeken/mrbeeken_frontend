@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
-const { computed, inject } = Ember;
-const { alias } = computed;
+const { inject, computed } = Ember;
 const { service } = inject;
+const { alias } = computed;
 
 export default Ember.Component.extend({
   store: service(),
@@ -18,7 +18,7 @@ export default Ember.Component.extend({
       filter: {
         "unit-id" : this.get('unit.id')
       }
-    });
+    })
   }),
   unit: null
 });
