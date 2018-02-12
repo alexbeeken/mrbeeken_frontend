@@ -5,6 +5,8 @@ const { service, controller } = inject;
 const { alias } = computed;
 
 export default Ember.Controller.extend({
+  courseController: controller('course'),
+  course: alias('courseController.model'),
   store: service(),
   actions: {
     doneSaving() {
