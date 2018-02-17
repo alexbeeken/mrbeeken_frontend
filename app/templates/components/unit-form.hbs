@@ -17,6 +17,13 @@
     </div>
 
     <div class='unit-form-input'>
+      {{textarea
+        required=true
+        placeholder='Order'
+        value=order}}
+    </div>
+
+    <div class='unit-form-input'>
       <button type='submit'>Save</button>
     </div>
   </form>
@@ -28,7 +35,8 @@
       {{#each unit.assessments as |assessment|}}
         <li>
           {{#link-to 'assessment.edit' assessment.id}}
-            {{assessment.title}}
+            # {{assessment.order}}
+            - {{assessment.title}}
           {{/link-to}}
           <button {{action "deleteAssessment" assessment.id}}>
             {{fa-icon "times"}}
@@ -45,7 +53,8 @@
       {{#each unit.lessons as |lesson|}}
         <li>
           {{#link-to 'lesson.edit' lesson.id}}
-            {{lesson.title}}
+          # {{lesson.order}}
+          - {{lesson.title}}
           {{/link-to}}
           <button {{action "deleteLesson" lesson.id}}>
             {{fa-icon "times"}}

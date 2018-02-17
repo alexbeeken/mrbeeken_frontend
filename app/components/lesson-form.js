@@ -9,11 +9,13 @@ export default Ember.Component.extend({
   },
   title: null,
   content: null,
+  order: null,
   actions: {
     saveLesson() {
       let lesson = this.get('lesson')
       lesson.set('title', this.get('title'))
       lesson.set('content', this.get('content'))
+      lesson.set('order', this.get('order'))
       lesson.save().then(() => {
         this.sendAction('doneSaving');
       }).catch((reason) => {

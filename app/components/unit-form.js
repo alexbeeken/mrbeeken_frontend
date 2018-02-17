@@ -9,15 +9,18 @@ export default Ember.Component.extend({
     let unit = this.get('unit')
     this.set('summary', unit.get('summary'))
     this.set('title', unit.get('title'))
+    this.set('order', unit.get('order'))
   },
   title: null,
   summary: null,
+  order: null,
   store: service(),
   actions: {
     saveUnit() {
       let unit = this.get('unit')
       unit.set('summary', this.get('summary'))
       unit.set('title', this.get('title'))
+      unit.set('order', this.get('order'))
       unit.save().then(() => {
         this.sendAction('doneSaving');
       }).catch((reason) => {

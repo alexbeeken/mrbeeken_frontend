@@ -24,7 +24,7 @@
           {{#each course.units as |unit|}}
             <li>
               {{#link-to 'unit.edit' unit.id}}
-                {{unit.title}}
+                # {{unit.order}} - {{unit.title}}
               {{/link-to}}
               <button {{action "deleteUnit" unit.id}}>
                 {{fa-icon "times"}}

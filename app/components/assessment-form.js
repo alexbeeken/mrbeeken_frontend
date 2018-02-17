@@ -7,10 +7,12 @@ export default Ember.Component.extend({
     this.set('title', assessment.get('title'))
   },
   title: null,
+  order: null,
   actions: {
     saveAssessment() {
       let assessment = this.get('assessment')
       assessment.set('title', this.get('title'))
+      assessment.set('order', this.get('order'))
       assessment.save().then(() => {
         this.sendAction('doneSaving');
       }).catch((reason) => {
