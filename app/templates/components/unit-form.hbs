@@ -32,7 +32,7 @@
       <h3>New Assessment</h3>
     {{/link-to}}
     <ol>
-      {{#each unit.assessments as |assessment|}}
+      {{#each assessments as |assessment|}}
         <li>
           {{#link-to 'assessment.edit' assessment.id}}
             # {{assessment.order}}
@@ -50,7 +50,7 @@
       <h3>New Lesson</h3>
     {{/link-to}}
     <ol>
-      {{#each unit.lessons as |lesson|}}
+      {{#each lessons as |lesson|}}
         <li>
           {{#link-to 'lesson.edit' lesson.id}}
           # {{lesson.order}}

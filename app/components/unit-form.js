@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
-const { inject } = Ember;
+const { inject, computed } = Ember;
 const { service } = inject;
+const { sort } = computed;
 
 export default Ember.Component.extend({
   didReceiveAttrs() {
@@ -15,6 +16,9 @@ export default Ember.Component.extend({
   summary: null,
   order: null,
   store: service(),
+  assessments: sort('unit.assessments', 'sortProperties'),
+  lessons: sort('unit.lessons', 'sortProperties'),
+  sortProperties: ['order:asc'],
   actions: {
     saveUnit() {
       let unit = this.get('unit')

@@ -21,7 +21,7 @@
           <h3>New Unit</h3>
         {{/link-to}}
         <ol>
-          {{#each course.units as |unit|}}
+          {{#each units as |unit|}}
             <li>
               {{#link-to 'unit.edit' unit.id}}
                 # {{unit.order}} - {{unit.title}}
