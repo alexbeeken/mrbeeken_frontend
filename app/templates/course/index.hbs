@@ -21,10 +21,10 @@
   <div class='course-show-summary'>
     {{model.summary}}
   </div>
-  <div class='course-show-structure'>
-    Units
+  <div class='course-show-outline'>
+    Outline
     <ul>
-      {{#each model.units as |unit|}}
+      {{#each sortedUnits as |unit|}}
         <li>
           {{unit-preview unit=unit}}
         </li>
