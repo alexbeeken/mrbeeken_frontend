@@ -28,39 +28,21 @@
     </div>
   </form>
   {{#if unit.id}}
+    <ol>
+      {{#each sortedItems as |item|}}
+        <li>
+          {{item-edit-link item=item}}
+          <button {{action "deleteItem" item.id}}>
+            {{fa-icon "times"}}
+          </button>
+        </li>
+      {{/each}}
+    </ol>
     {{#link-to 'assessments.new' unit.id}}
       <h3>New Assessment</h3>
     {{/link-to}}
-    <ol>
-      {{#each assessments as |assessment|}}
-        <li>
-          {{#link-to 'assessment.edit' assessment.id}}
-            # {{assessment.order}}
-            - {{assessment.title}}
-          {{/link-to}}
-          <button {{action "deleteAssessment" assessment.id}}>
-            {{fa-icon "times"}}
-          </button>
-        </li>
-      {{/each}}
-    </ol>
-  {{/if}}
-  {{#if unit.id}}
     {{#link-to 'lessons.new' unit.id}}
       <h3>New Lesson</h3>
     {{/link-to}}
-    <ol>
-      {{#each lessons as |lesson|}}
-        <li>
-          {{#link-to 'lesson.edit' lesson.id}}
-          # {{lesson.order}}
-          - {{lesson.title}}
-          {{/link-to}}
-          <button {{action "deleteLesson" lesson.id}}>
-            {{fa-icon "times"}}
-          </button>
-        </li>
-      {{/each}}
-    </ol>
   {{/if}}
 </div>
