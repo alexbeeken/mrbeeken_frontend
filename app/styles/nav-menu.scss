@@ -1,5 +1,8 @@
-.show-menu {
+.fixed {
   position: fixed;
+}
+
+.show-menu {
   width: 120px;
   z-index: 15;
   .liquid-child {
