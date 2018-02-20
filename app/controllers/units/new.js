@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
   store: service(),
   unit: computed(function() {
     return this.get('store').createRecord('unit', { course: this.get('course') })
-  }),
+  }).volatile(),
   actions: {
     doneSaving() {
       this.get('flashMessages').info('Unit saved successfully!');

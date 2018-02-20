@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
     return this.get('store').createRecord('lesson', {
       unit: this.get('unit')
     })
-  }),
+  }).volatile(),
   actions: {
     doneSaving() {
       this.get('flashMessages').info('Lesson saved successfully!');
