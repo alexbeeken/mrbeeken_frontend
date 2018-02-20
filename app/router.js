@@ -11,7 +11,6 @@ Router.map(function() {
   this.route('login', { path: '/login' });
   this.route('register', { path: '/register' });
   this.route('admin');
-  this.route('videos');
   this.resource('courses', function() {
     this.route('new');
   });

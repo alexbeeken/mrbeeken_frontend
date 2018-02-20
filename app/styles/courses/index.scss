@@ -10,15 +10,15 @@
   margin-top: $general-margin;
   a {
     width: 93%;
-    max-width: 400px;
     margin: $general-margin;
     text-decoration: none;
   }
 }
 .course-preview {
   border: $border-thickness solid $border-color;
-  border-radius: 10px;
-  height: 300px;
+  border-radius: 5px;
+  height: 150px;
+  background-color: white;
   hr {
     margin: $small-margin;
     color: $gray;
@@ -26,13 +26,13 @@
   .course-preview-title {
     color: black;
     font-family: $font1;
-    font-size: 1.5em;
+    font-size: $title-medium;
     padding: $padding;
     max-height: 100px;
   }
   .course-preview-summary {
     color: black;
-    font-size: 1em;
+    font-size: $font-small;
     padding: $padding;
     word-wrap: normal;
   }

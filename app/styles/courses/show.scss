@@ -5,6 +5,9 @@
     color: black;
   }
   .logged-out {
+    position: fixed;
+    width: 100%;
+    opacity: 0.89;
     align-items: center;
     background: $positive-green;
     display: flex;
