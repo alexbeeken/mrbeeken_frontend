@@ -13,12 +13,6 @@ Router.map(function() {
   this.route('admin');
   this.route('about');
   this.route('videos');
-  this.route('posts', function() {
-    this.route('new');
-  });
-  this.resource('post', { path: '/post/:post_id' }, function() {
-    this.route('edit');
-  });
   this.resource('courses', function() {
     this.route('new');
   });

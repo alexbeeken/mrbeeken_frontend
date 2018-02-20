@@ -1,35 +1,5 @@
 <h1> Admin Page </h1>
 
-<h2> Posts </h2>
-
-{{#link-to "posts.new"}}
-  <button>New Post</button>
-{{/link-to}}
-
-<table>
-  {{#each posts as |post|}}
-    <tr>
-      <td>
-        {{#link-to "post" post.id}}
-          {{post.title}}
-        {{/link-to}}
-      </td>
-      <td>
-        {{#link-to "post.edit" post.id}}
-          <h3>edit</h3>
-        {{/link-to}}
-      </td>
-      <td>
-        {{#confirm-dialog}}
-          <button {{action "deletePost" post.id}}>
-            {{fa-icon "times"}}
-          </button>
-        {{/confirm-dialog}}
-      </td>
-    </tr>
-  {{/each}}
-</table>
-
 <h2> Courses </h2>
 
 {{#link-to "courses.new"}}
