@@ -1,10 +1,7 @@
-<header class='courses-title'>
-  Courses
-</header>
 <section class='courses-feed'>
   {{#each courses as |course|}}
-    <article class='course-preview'>
-      {{#link-to "course" course.id}}
+    {{#link-to "course" course.id}}
+      <article class='course-preview'>
         <div class='course-preview-title'>
           {{course.title}}
         </div>
@@ -12,7 +9,7 @@
         <div class='course-preview-summary'>
           {{course.summary}}
         </div>
-      {{/link-to}}
-    </article>
+      </article>
+    {{/link-to}}
   {{/each}}
 </section>

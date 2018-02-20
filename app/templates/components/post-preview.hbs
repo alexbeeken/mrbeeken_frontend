@@ -1,10 +1,10 @@
-<article class='post'>
-  <div class='title'>
-    {{#link-to "post" post.id}}
+{{#link-to "post" post.id}}
+  <article class='post'>
+    <div class='title'>
       {{post.title}}
-    {{/link-to}}
-  </div>
-  <div class='summary'>
-    {{post.summary}}
-  </div>
-</article>
+    </div>
+    <div class='summary'>
+      {{post.summary}}
+    </div>
+  </article>
+{{/link-to}}

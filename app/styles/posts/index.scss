@@ -1,25 +1,30 @@
 .feed {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: $general-margin;
+  a {
+    color: black;
+    text-decoration: none;
+  }
   .post {
+    margin: $general-margin;
     border: $border-thickness solid $border-color;
-    border-radius: 1vw;
-    width: 75vw;
-    margin: 1vw;
-    height: 10vw;
+    border-radius: 10px;
+    width: 90%;
     padding: $padding;
     .title {
-      font-size: 1.8vw;
+      font-size: $title-medium;
       display: flex;
       justify-content: flex-start;
-      height: 4vw;
       border-bottom: 0.1vw solid $gray;
-      a {
-        text-decoration: none;
-      }
       text-align: left;
+      padding: $padding;
     }
     .summary {
       overflow: auto;
-      font-size: 1.3vw;
+      font-size: $font-small;
+      padding: $padding;
     }
     &:hover {
       box-shadow: 0.05em 0.05em 0.05em 0.05em $gray;
