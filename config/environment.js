@@ -4,6 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'mrbeeken-frontend',
     environment: environment,
+    apiHost: 'http://localhost:4000/api/v1',
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -52,10 +53,6 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
-
-  }
-
   ENV['ember-simple-auth'] = {
     authorizer: 'authorizer:jwt',
     routeIfAlreadyAuthenticated: '/',
@@ -64,13 +61,18 @@ module.exports = function(environment) {
   ENV['ember-simple-auth-token'] = {
     refreshAccessTokens: true,
     refreshLeeway: 300, // Refresh the token 5 minutes (300s) before it expires.
-    serverTokenEndpoint: '/api/v1/session/login',
+    serverTokenEndpoint: ENV.apiHost + '/session/login',
     headers: {
       'Accept': 'application/vnd.api+json',
       'Content-Type': 'application/vnd.api+json'
     },
     identificationField: 'email'
   };
+
+  ENV['ember-cli-mirage'] = {
+    enabled: true,
+    exampleToken: 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJVc2VyOjMxIiwiZXhwIjoxNTIxODMzOTk2LCJpYXQiOjE1MTkyNDE5OTYsImlzcyI6Ik1yQmVla2VuIiwianRpIjoiZmQ0Mzc1NTEtOTBhMC00ZjhkLTgxNjUtZDEwYWM5OWJkYzNkIiwicGVtIjp7fSwic3ViIjoiVXNlcjozMSIsInR5cCI6ImFjY2VzcyJ9.0enXIQwK9kNkl1glD1lnbyF3j4t90ktfcjYEb3z-H6WBmLd4IlPg2vqrU-NrzEv-KieV4dm7C5uwOeLUtfMb6A'
+  }
 
   return ENV
 };

@@ -1,9 +1,10 @@
 import DS from 'ember-data';
+import ENV from '../config/environment';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   authorizer: 'authorizer:token',
-  host: 'http://localhost:4000/api/v1',
+  host: ENV['apiHost'],
   urlForQueryRecord(query) {
     if (query.me) {
       delete query.me;
