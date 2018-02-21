@@ -17,7 +17,7 @@
 .course-preview {
   border: $border-thickness solid $border-color;
   border-radius: 5px;
-  height: 150px;
+  height: 120px;
   background-color: white;
   hr {
     margin: $small-margin;
@@ -27,13 +27,14 @@
     color: black;
     font-family: $font1;
     font-size: $title-medium;
-    padding: $padding;
+    padding-top: $padding;
+    padding-left: $padding;
     max-height: 100px;
   }
   .course-preview-summary {
     color: black;
     font-size: $font-small;
-    padding: $padding;
+    padding-left: $padding;
     word-wrap: normal;
   }
   &:hover {

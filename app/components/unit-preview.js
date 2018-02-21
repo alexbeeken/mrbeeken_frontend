@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { inject, computed, merge } = Ember;
+const { inject, computed } = Ember;
 const { service } = inject;
 const { union, sort } = computed;
 
