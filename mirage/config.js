@@ -5,10 +5,10 @@ export default function() {
   this.urlPrefix = ENV['apiHost'];
 
   this.get('/courses');
-
+  this.post('/courses');
   this.get('/courses/:id');
-
-  this.get('/units/:id');
+  this.patch('/courses/:id');
+  this.del('/courses/:id');
 
   this.get('/units', function(db, request) {
     if(Ember.isEmpty(request.queryParams)) {
@@ -19,6 +19,10 @@ export default function() {
       units = db.units.where({ courseId: courseId });
     }
   });
+  this.post('/units');
+  this.get('/units/:id');
+  this.patch('/units/:id');
+  this.del('/units/:id');
 
   this.get('/assessments', function(db, request) {
     let assessments;
@@ -33,8 +37,10 @@ export default function() {
 
     return assessments
   });
-
+  this.post('/assessments');
   this.get('/assessments/:id');
+  this.patch('/assessments/:id');
+  this.del('/assessments/:id');
 
   this.get('/lessons', function(db, request) {
     let lessons;
@@ -49,8 +55,10 @@ export default function() {
 
     return lessons
   });
-
-  this.get('/lessons/:id')
+  this.post('/lessons');
+  this.get('/lessons/:id');
+  this.patch('/lessons/:id');
+  this.del('/lessons/:id');
 
   this.get('/users/me', function(db) {
     return db.users.first()
