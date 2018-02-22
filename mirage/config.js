@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import Mirage from 'ember-cli-mirage';
 import ENV from '../config/environment';
 
@@ -11,13 +12,15 @@ export default function() {
   this.del('/courses/:id');
 
   this.get('/units', function(db, request) {
+    let units;
     if(Ember.isEmpty(request.queryParams)) {
-      assessments = db.assessments;
+      units = db.units;
     } else {
       let courseId = request.queryParams['filter[course_id]'];
 
       units = db.units.where({ courseId: courseId });
     }
+    return units;
   });
   this.post('/units');
   this.get('/units/:id');
@@ -64,7 +67,7 @@ export default function() {
     return db.users.first()
   });
 
-  this.get('/users/unique/:email', function(db, request) {
+  this.get('/users/unique/:email', function(db) {
     return new Mirage.Response(
       200,
       {},
