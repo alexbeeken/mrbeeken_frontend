@@ -1,29 +1,26 @@
-<div class='course-show-enroll'>
-  {{#if currentUser}}
-    <div class='logged-in'>
-      <button {{action 'enroll'}}>
-        enroll in this course
-      </button>
-    </div>
-  {{else}}
-    <div class='logged-out'>
-      {{#link-to 'login'}}
-        <u>Sign up</u> or <u>Login</u> to take this course.
-      {{/link-to}}
-    </div>
-  {{/if}}
-</div>
+{{#if noCurrentUser}}
+  <div class='logged-out-message'>
+    {{#link-to 'login'}}
+      <u>Sign up</u> or <u>Login</u> to take this course.
+    {{/link-to}}
+  </div>
+{{/if}}
 <section class='course-show'>
   <div class='course-show-title'>
     {{model.title}}
     <hr>
   </div>
+  <div class='course-show-subtitle'>
+    Summary
+  </div>
   <div class='course-show-summary'>
     {{model.summary}}
+    <hr>
   </div>
-
-  <div class='course-show-outline'>
+  <div class='course-show-subtitle'>
     Outline
+  </div>
+  <div class='course-show-outline'>
     <ul>
       {{#each sortedUnits as |unit|}}
         <li>
@@ -32,4 +29,11 @@
       {{/each}}
     </ul>
   </div>
+  {{#if currentUser}}
+    <div class='enroll-button'>
+      <button {{action 'enroll'}}>
+        ENROLL
+      </button>
+    </div>
+  {{/if}}
 </section>

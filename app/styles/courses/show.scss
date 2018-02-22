@@ -1,44 +1,56 @@
-.course-show-enroll {
+.logged-out {
   width: 100%;
   a {
     text-decoration: none;
     color: black;
   }
-  .logged-out {
-    position: fixed;
-    width: 100%;
-    opacity: 0.89;
-    align-items: center;
-    background: $positive-green;
-    display: flex;
-    height: 2em;
-    justify-content: space-between;
-    padding-left: 1em;
+  position: fixed;
+  width: 100%;
+  opacity: 0.89;
+  align-items: center;
+  background: $positive-green;
+  display: flex;
+  height: 2em;
+  justify-content: space-between;
+  padding-left: 1em;
+}
+
+.enroll-button {
+  text-align: center;
+  margin: $general-margin;
+  button {
+    font-size: $font-medium;
+    background-color: $green;
+    border-radius: $border-radius;
+    box-shadow: none;
+    border: none;
+    width: 100px;
+    height: 50px;
   }
 }
 
 .course-show {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  margin-right: $general-margin;
+  margin-right: $general-margin;
+  hr {
+    margin: $small-margin;
+  }
   .course-show-title {
-    font-size: 2em;
-    height: 2em;
-    margin-top: 0.5em;
     text-align: center;
+    font-size: $title-large;
     width: 100%;
+    margin-top: $large-margin;
+  }
+  .course-show-subtitle {
+    text-align: center;
+    font-size: $title-small;
+    font-weight: bold;
+    margin: $small-margin;
   }
   .course-show-summary {
-    font-size: 1em;
-    height: 2em;
-    margin-top: 1em;
-    margin-left: 1em;
-    text-align: left;
-    width: 100%;
+    font-size: $font-medium;
   }
   .course-show-structure {
-    text-align: left;
     width: 100%;
     .course-unit {
       text-align: left;

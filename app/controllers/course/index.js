@@ -7,6 +7,9 @@ const { alias, sort } = computed;
 export default Ember.Controller.extend({
   cuService: service('current-user'),
   currentUser: alias('cuService.user'),
+  noCurrentUser: computed('currentUser', function() {
+    return this.get('currentUser') == null
+  }),
   store: service(),
   sortedUnits: sort('model.units', 'sortProperties'),
   sortProperties: ['order'],
