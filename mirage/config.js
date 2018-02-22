@@ -90,4 +90,6 @@ export default function() {
       }
     );
   });
+
+  this.post('/course-enrollments');
 }

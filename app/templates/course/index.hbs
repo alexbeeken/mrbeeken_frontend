@@ -1,9 +1,9 @@
 <div class='course-show-enroll'>
   {{#if currentUser}}
     <div class='logged-in'>
-      <a href="#">
+      <button {{action 'enroll'}}>
         enroll in this course
-      </a>
+      </button>
     </div>
   {{else}}
     <div class='logged-out'>
@@ -21,6 +21,7 @@
   <div class='course-show-summary'>
     {{model.summary}}
   </div>
+
   <div class='course-show-outline'>
     Outline
     <ul>
