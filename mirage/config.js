@@ -76,6 +76,8 @@ export default function() {
     );
   });
 
+  this.post('/users');
+
   this.post('/session/login', function() {
     return new Mirage.Response(
       200,

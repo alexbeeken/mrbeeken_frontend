@@ -6,7 +6,7 @@
   <button>New Course</button>
 {{/link-to}}
 
-<table>
+<table class='admin-table'>
   {{#each courses as |course|}}
     <tr>
       <td>
@@ -16,14 +16,14 @@
       </td>
       <td>
         {{#link-to "course.edit" course.id}}
-          <h3>edit</h3>
+          {{fa-icon "pencil"}}
         {{/link-to}}
       </td>
       <td>
         {{#confirm-dialog}}
-          <button {{action "deleteCourse" course.id}}>
+          <div {{action "deleteCourse" course.id}} class='admin-delete-link'>
             {{fa-icon "times"}}
-          </button>
+          </div>
         {{/confirm-dialog}}
       </td>
     </tr>

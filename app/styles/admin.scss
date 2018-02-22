@@ -1,0 +1,18 @@
+.admin-table {
+  border-collapse: collapse;
+  width: 100%;
+  tr td {
+    padding: $padding;
+    border: 1px solid black;
+    overflow: hidden;
+    text-overflow: clip;
+    a {
+      text-decoration: none;
+      text-decoration-color: black;
+      color: black;
+    }
+  }
+  .admin-delete-link {
+    cursor: pointer;
+  }
+}

@@ -5,8 +5,8 @@ const { alias } = computed;
 
 export default Ember.Component.extend({
   itemEditRoute: computed('item', function() {
-    return this.get('itemName') + '.edit'
+    return this.get('itemType') + '.edit'
   }),
-  itemName: alias('item._internalModel.modelName'),
+  itemType: alias('item._internalModel.modelName'),
   item: null
 })

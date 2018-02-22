@@ -28,16 +28,13 @@
     </div>
   </form>
   {{#if unit.id}}
-    <ol>
-      {{#each sortedItems as |item|}}
-        <li>
-          {{item-edit-link item=item}}
-          <button {{action "deleteItem" item.id}}>
-            {{fa-icon "times"}}
-          </button>
-        </li>
-      {{/each}}
-    </ol>
+    <table>
+      <div class='admin-table'>
+        {{#each sortedItems as |item|}}
+          {{admin-item-row item=item}}
+        {{/each}}
+      </div>
+    </table>
     {{#link-to 'assessments.new' unit.id}}
       <h3>New Assessment</h3>
     {{/link-to}}

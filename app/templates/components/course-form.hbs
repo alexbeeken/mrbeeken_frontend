@@ -20,18 +20,28 @@
         {{#link-to 'units.new' course.id}}
           <h3>New Unit</h3>
         {{/link-to}}
-        <ol>
+        <table class='admin-table'>
           {{#each units as |unit|}}
-            <li>
-              {{#link-to 'unit.edit' unit.id}}
-                # {{unit.order}} - {{unit.title}}
-              {{/link-to}}
-              <button {{action "deleteUnit" unit.id}}>
-                {{fa-icon "times"}}
-              </button>
-            </li>
+            <tr>
+              <td>
+                {{unit.order}}
+              </td>
+              <td>
+                {{unit.title}}
+              </td>
+              <td>
+                {{#link-to 'unit.edit' unit.id}}
+                  {{fa-icon 'pencil'}}
+                {{/link-to}}
+              </td>
+              <td>
+                <div {{action "deleteUnit" unit.id}} class='admin-delete-link'>
+                  {{fa-icon "times"}}
+                </div>
+              </td>
+            </tr>
           {{/each}}
-        </ol>
+        </table>
       {{/if}}
     </div>
     <div class='course-form-input'>

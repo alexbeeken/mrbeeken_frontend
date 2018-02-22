@@ -1,0 +1,21 @@
+<tr>
+  <td>
+    {{item.order}}
+  </td>
+  <td>
+    {{itemType}}
+  </td>
+  <td>
+    {{item.title}}
+  </td>
+  <td>
+    {{#link-to itemEditRoute item.id}}
+      {{fa-icon "pencil"}}
+    {{/link-to}}
+  </td>
+  <td>
+    <div {{action "deleteItem" item.id}} class='admin-delete-link'>
+      {{fa-icon "times"}}
+    </div>
+  </td>
+</tr>

@@ -1,7 +1,7 @@
-<div class='login-space'>
-  <div class='login-modal box'>
-    <div class='login-messages'>
-      <div class='login-messages-showing'>
+<div class='register-space'>
+  <div class='register-modal box'>
+    <div class='register-messages'>
+      <div class='register-messages-showing'>
         {{#if passwordsDiff}}
           <div class='error-text'>
             Passwords do not match.
@@ -10,7 +10,7 @@
 
         {{#if passwordInvalid}}
           <div class='error-text'>
-            Password is too short.
+            Password must be at least 8 characters long.
           </div>
         {{/if}}
 

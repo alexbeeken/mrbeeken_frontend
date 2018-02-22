@@ -1,10 +1,10 @@
-.login-space {
+.register-space {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 85vh;
-  .login-modal {
-    .login-messages {
+  .register-modal {
+    .register-messages {
       margin-top: $small-margin;
       margin-bottom: $small-margin;
       min-height: 40px;
@@ -27,7 +27,7 @@
     justify-content: center;
     align-items: center;
     width: 300px;
-    height: 320px;
+    height: 350px;
     background: white;
     display: flex;
     flex-direction: column;
