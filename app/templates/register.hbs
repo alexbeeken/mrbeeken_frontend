@@ -1,39 +1,52 @@
-<div class='login-window'>
-  <form {{action "register" on="submit"}}>
-    <div class='fields'>
-      <div class='field'>
-        <label for='identification'>Email</label>
-        {{input type="email" value=identification value=identification key-up="checkEmail" placeholder="email@example.com"}}
-      </div>
-      <div class='field'>
-        <label for='password'>Password</label>
-        {{input type="password" value=password placeholder="password"}}
-      </div>
-      <div class='field'>
-        <label for='passwordConfirmation'>Password Confirm</label>
-        {{input type="password" value=passwordConfirm placeholder="password"}}
-      </div>
-      <div class='actions'>
-        <div class='submit'>
-          <button type='submit' disabled={{inputInvalid}}>Register</button>
-        </div>
+<div class='login-space'>
+  <div class='login-modal box'>
+    <div class='login-messages'>
+      <div class='login-messages-showing'>
+        {{#if passwordsDiff}}
+          <div class='error-text'>
+            Passwords do not match.
+          </div>
+        {{/if}}
+
+        {{#if passwordInvalid}}
+          <div class='error-text'>
+            Password is too short.
+          </div>
+        {{/if}}
+
+        {{#if emailUnique}}
+          <div class='error-text'>
+            This email already has a registered account.
+          </div>
+        {{/if}}
+
+        {{#if emailInvalid}}
+          <div class='error-text'>
+            Not a valid email.
+          </div>
+        {{/if}}
       </div>
     </div>
-  </form>
+    <form {{action "register" on="submit"}}>
+      <div class='fields'>
+        <div class='field'>
+          <label for='identification'>Email</label>
+          {{input type="email" value=identification value=identification key-up="checkEmail" placeholder="email@example.com"}}
+        </div>
+        <div class='field'>
+          <label for='password'>Password</label>
+          {{input type="password" value=password placeholder="password"}}
+        </div>
+        <div class='field'>
+          <label for='passwordConfirmation'>Password Confirm</label>
+          {{input type="password" value=passwordConfirm placeholder="password"}}
+        </div>
+        <div class='actions'>
+          <div class='submit'>
+            <button type='submit' disabled={{inputInvalid}}>Register</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
-
-{{#if passwordsDiff}}
-  <p>Passwords do not match.</p>
-{{/if}}
-
-{{#if passwordInvalid}}
-  <p>Password is too short.</p>
-{{/if}}
-
-{{#if emailUnique}}
-  <p>This email already has a registered account.</p>
-{{/if}}
-
-{{#if emailInvalid}}
-  <p>Not a valid email.</p>
-{{/if}}

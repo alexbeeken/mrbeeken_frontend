@@ -64,6 +64,18 @@ export default function() {
     return db.users.first()
   });
 
+  this.get('/users/unique/:email', function(db, request) {
+    return new Mirage.Response(
+      200,
+      {},
+      {
+        meta: {
+          unique: true
+        }
+      }
+    );
+  });
+
   this.post('/session/login', function() {
     return new Mirage.Response(
       200,

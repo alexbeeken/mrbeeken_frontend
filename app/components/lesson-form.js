@@ -6,6 +6,7 @@ export default Ember.Component.extend({
     let lesson = this.get('lesson')
     this.set('title', lesson.get('title'))
     this.set('content', lesson.get('content'))
+    this.set('order', lesson.get('order'))
   },
   title: null,
   content: null,

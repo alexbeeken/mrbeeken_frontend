@@ -5,6 +5,7 @@ export default Ember.Component.extend({
     this._super(...arguments)
     let assessment = this.get('assessment')
     this.set('title', assessment.get('title'))
+    this.set('order', assessment.get('order'))
   },
   title: null,
   order: null,

@@ -1,47 +1,74 @@
-.login-window {
-  padding-top: 100px;
+.login-space {
   display: flex;
   justify-content: center;
-  width: 100%;
-  .fields {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    .field {
-      text-align: left;
-      label {
-        font-size: 0.8em;
-        float: left;
-        width: 100%;
-      }
-      input {
-        float: left;
-        margin-bottom: 20px;
-        width: 100%;
-        border-radius: 6px;
-        height: 20px;
-        font-size: 0.8em;
+  align-items: center;
+  height: 85vh;
+  .login-modal {
+    .login-messages {
+      margin-top: $small-margin;
+      margin-bottom: $small-margin;
+      min-height: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .error-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: $yellow;
+        text-align: center;
       }
     }
-  }
-  .actions {
-    width: 200px;
-    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 300px;
+    height: 350px;
+    background: white;
+    display: flex;
     flex-direction: column;
-    .register-link {
-      height: 30px;
+    .fields {
+      width: 200px;
+      .field {
+        text-align: left;
+        label {
+          font-size: 0.8em;
+          float: left;
+          width: 100%;
+        }
+        input {
+          float: left;
+          margin-bottom: 20px;
+          width: 100%;
+          border-radius: 6px;
+          height: 20px;
+          font-size: 0.8em;
+        }
+      }
     }
-    .submit {
-      button {
-        font-size: 1.3em;
-        background-color: $positive-green;
-        border-radius: 5px;
-        box-shadow: none;
-        width: 200px;
-        height: 50px;
+    .actions {
+      width: 200px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .register-link {
+        height: 30px;
+      }
+      .submit {
+        button {
+          font-size: 1.3em;
+          background-color: $positive-green;
+          border-radius: 5px;
+          box-shadow: none;
+          width: 200px;
+          height: 50px;
+        }
       }
     }
   }

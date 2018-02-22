@@ -15,8 +15,6 @@
   }
 }
 .course-preview {
-  border: $border-thickness solid $border-color;
-  border-radius: 5px;
   height: 120px;
   background-color: white;
   hr {
@@ -36,12 +34,6 @@
     font-size: $font-small;
     padding-left: $padding;
     word-wrap: normal;
-  }
-  &:hover {
-    box-shadow: $medium-box-shadow;
-  }
-  &:active {
-    box-shadow: 0.02em 0.02em 0.02em 0.02em $gray;
   }
   a:-webkit-any-link {
     color: black;

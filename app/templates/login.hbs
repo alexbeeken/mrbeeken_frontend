@@ -1,26 +1,27 @@
-<div class='login-window'>
-  <form {{action 'authenticate' on='submit'}}>
-    <div class='fields'>
-      <div class='field'>
-        <label for='identification'>Email</label>
-        {{input id='identification' value=identification}}
+<div class='login-space'>
+  <div class='login-modal box'>
+    <form {{action 'authenticate' on='submit'}}>
+      <div class='fields'>
+        <div class='field'>
+          <label for='identification'>Email</label>
+          {{input id='identification' value=identification}}
+        </div>
+        <div class='field'>
+          <label for='password'>Password</label>
+          {{input id='password' type='password' value=password}}
+        </div>
       </div>
-      <div class='field'>
-        <label for='password'>Password</label>
-        {{input id='password' type='password' value=password}}
+      <div class='actions'>
+        <div class='register-link'>
+          {{#link-to 'register'}}Register{{/link-to}}
+        </div>
+        <div class='submit'>
+          <button type='submit'>Login</button>
+        </div>
       </div>
-    </div>
-    <div class='actions'>
-      <div class='register-link'>
-        {{#link-to 'register'}}Register{{/link-to}}
-      </div>
-      <div class='submit'>
-        <button type='submit'>Login</button>
-      </div>
-    </div>
-  </form>
-  {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
-  {{/if}}
-
+    </form>
+    {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+    {{/if}}
+  </div>
 </div>

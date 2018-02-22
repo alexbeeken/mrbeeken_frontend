@@ -1,7 +1,7 @@
 @import 'variables.scss';
+@import 'boxes.scss';
 @import 'fonts.scss';
 @import 'index.scss';
-@import 'videos.scss';
 @import 'login.scss';
 @import 'flash.scss';
 @import 'nav-menu.scss';
@@ -15,6 +15,7 @@
 
 body {
   margin: 0px;
+  background-color: $background-color;
 }
 
 .body-space {
@@ -22,7 +23,6 @@ body {
   justify-content: space-between;
   .main-content {
     margin-top: 55px;
-    background-color: $background-color;
     width: 100%;
   }
 }

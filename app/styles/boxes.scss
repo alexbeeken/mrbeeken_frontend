@@ -1,0 +1,24 @@
+$border-thickness: 0px;
+$border-color: $gray;
+$border-radius: 5px;
+$border: $border-thickness solid $border-color;
+
+$shadow-color: $gray;
+
+$shadow: 0.03em 0.03em $gray;
+$hover-shadow: 0.03em 0.03em 0.03em 0.03em $gray;
+$active-shadow: 0.02em 0.02em 0.02em 0.02em $gray;
+
+.box {
+  padding: $padding;
+  box-shadow: $shadow;
+}
+
+.hover {
+  &:hover {
+    box-shadow: $hover-shadow;
+  }
+  &:active {
+    box-shadow: $active-shadow
+  }
+}
