@@ -26,5 +26,6 @@ export default function(server) {
       { unitId: unit.id }
     );
   });
-  server.create('user', { superuser: true });
+  let user = server.create('user', { superuser: true });
+  server.create('courseEnrollment', { userId: user.id, courseId: courses[Math.floor(Math.random()*courses.length)].id })
 }

@@ -5,6 +5,11 @@
     </div>
   </div>
   <ul>
+    {{#if currentUser}}
+      <li>
+        {{component 'nav-link' text='dashboard' path='dashboard' icon='tachometer'}}
+      </li>
+    {{/if}}
     <li>
       {{component 'nav-link' text='courses' path='courses' icon='graduation-cap'}}
     </li>

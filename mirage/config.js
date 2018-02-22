@@ -67,7 +67,7 @@ export default function() {
     return db.users.first()
   });
 
-  this.get('/users/unique/:email', function(db) {
+  this.get('/users/unique/:email', function() {
     return new Mirage.Response(
       200,
       {},

@@ -9,4 +9,9 @@ export default function(){
     this.toRoute('register'),
     this.use('toLeft', { duration: 250 })
   );
+  this.transition(
+    this.toRoute('dashboard'),
+    this.fromRoute('login'),
+    this.use('toLeft', { duration: 250 })
+  );
 }
