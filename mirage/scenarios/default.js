@@ -10,7 +10,7 @@ export default function(server) {
       server.createList(
         'unit',
         rand_within(2, 5),
-        { courseId: course.id }
+        { course: course }
       )
     );
   });
@@ -18,14 +18,20 @@ export default function(server) {
     server.createList(
       'assessment',
       rand_within(3, 6),
-      { unitId: unit.id }
+      { unit: unit }
     );
     server.createList(
       'lesson',
       rand_within(3, 6),
-      { unitId: unit.id }
+      { unit: unit }
     );
   });
   let user = server.create('user', { superuser: true });
-  server.create('courseEnrollment', { userId: user.id, courseId: courses[Math.floor(Math.random()*courses.length)].id })
+  server.create(
+    'courseEnrollment',
+    {
+      user: user,
+      course: courses[0]
+    }
+  );
 }

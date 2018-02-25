@@ -58,14 +58,15 @@ export default function() {
 
     return lessons
   });
-  this.post('/lessons');
+  this.del('/lessons/:id');
   this.get('/lessons/:id');
   this.patch('/lessons/:id');
-  this.del('/lessons/:id');
+  this.post('/lessons');
 
   this.get('/users/me', function(db) {
     return db.users.first()
   });
+  this.post('/users');
 
   this.get('/users/unique/:email', function() {
     return new Mirage.Response(
@@ -79,7 +80,6 @@ export default function() {
     );
   });
 
-  this.post('/users');
 
   this.post('/session/login', function() {
     return new Mirage.Response(
@@ -92,4 +92,18 @@ export default function() {
   });
 
   this.post('/course-enrollments');
+  this.get('/course-enrollments', function(db, request) {
+    let courseEnrollments;
+
+    if(Ember.isEmpty(request.queryParams)) {
+      courseEnrollments = db.courseEnrollments;
+    } else {
+      let userId = request.queryParams['filter[user_id]'];
+
+      courseEnrollments = db.courseEnrollments.where({ userId: userId });
+    }
+
+    return courseEnrollments
+  });
+  this.get('/course-enrollments/:id');
 }

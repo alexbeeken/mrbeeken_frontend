@@ -4,5 +4,5 @@ export default DS.Model.extend({
   title: DS.attr(),
   summary: DS.attr(),
   units: DS.hasMany('unit'),
-  courseEnrollments: DS.hasMany('course-enrollment')
+  courseEnrollments: DS.hasMany('courseEnrollment')
 });

@@ -1,5 +1,9 @@
 Dashboard
+<br>
+My Courses
 
+<ul>
 {{#each enrollments as |enrollment|}}
-  {{enrollment.id}}
+  <li>{{enrollment.course.title}}</li>
 {{/each}}
+</ul>
