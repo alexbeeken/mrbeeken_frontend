@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import Mirage from 'ember-cli-mirage';
+import { faker } from 'ember-cli-mirage';
 import ENV from '../config/environment';
 
 export default function() {
@@ -91,18 +92,43 @@ export default function() {
     );
   });
 
-  this.post('/course-enrollments');
+  this.post('/course-enrollments', function(db, request) {
+    let req = JSON.parse(request.requestBody)
+    return db.create('courseEnrollment', {
+      userId: req.data.relationships.user.data.id,
+      courseId: req.data.relationships.course.data.id,
+      inserted_at: faker.date.recent()
+    })
+  });
   this.get('/course-enrollments', function(db, request) {
     let courseEnrollments;
 
-    if(Ember.isEmpty(request.queryParams)) {
+    if (Ember.isEmpty(request.queryParams)) {
       courseEnrollments = db.courseEnrollments;
     } else {
       let userId = request.queryParams['filter[user_id]'];
-
-      courseEnrollments = db.courseEnrollments.where({ userId: userId });
+      let courseId = request.queryParams['filter[course_id]'];
+      if (userId && courseId) {
+        courseEnrollments = db.courseEnrollments.where(
+          {
+            userId: userId,
+            courseId: courseId
+          }
+        );
+      } else if (userId) {
+        courseEnrollments = db.courseEnrollments.where(
+          {
+            userId: userId
+          }
+        );
+      } else {
+        courseEnrollments = db.courseEnrollments.where(
+          {
+            courseId: courseId
+          }
+        );
+      }
     }
-
     return courseEnrollments
   });
   this.get('/course-enrollments/:id');

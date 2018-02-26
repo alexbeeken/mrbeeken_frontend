@@ -1,9 +1,8 @@
-Dashboard
-<br>
-My Courses
-
-<ul>
-{{#each enrollments as |enrollment|}}
-  <li>{{enrollment.course.title}}</li>
-{{/each}}
-</ul>
+<div class='dashboard'>
+  <div class='box dash-my-courses'>
+    resume courses
+    {{#each enrollments as |enrollment|}}
+      {{dashboard/my-course enrollment=enrollment}}
+    {{/each}}
+  </div>
+</div>

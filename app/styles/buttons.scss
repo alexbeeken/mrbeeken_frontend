@@ -1,0 +1,13 @@
+.positive-large-button {
+  text-align: center;
+  margin: $general-margin;
+  button {
+    font-size: $font-medium;
+    background-color: $green;
+    border-radius: $border-radius;
+    box-shadow: none;
+    border: none;
+    width: 100px;
+    height: 50px;
+  }
+}

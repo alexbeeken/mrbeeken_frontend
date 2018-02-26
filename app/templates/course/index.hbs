@@ -29,8 +29,8 @@
       {{/each}}
     </ul>
   </div>
-  {{#if currentUser}}
-    <div class='enroll-button'>
+  {{#if canEnroll}}
+    <div class='positive-large-button'>
       <button {{action 'enroll'}}>
         ENROLL
       </button>

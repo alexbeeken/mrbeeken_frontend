@@ -1,6 +1,6 @@
 <section class='courses-feed'>
   {{#each courses as |course|}}
-    {{#link-to "course" course.id}}
+    {{#link-to 'course' course.id}}
       {{course-preview course=course}}
     {{/link-to}}
   {{/each}}

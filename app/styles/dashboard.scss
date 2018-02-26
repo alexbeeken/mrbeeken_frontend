@@ -1,0 +1,23 @@
+.dashboard {
+  padding: $large-margin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .dash-my-courses {
+    width: 100%;
+    height: 300px;
+    padding: $padding;
+    .dash-my-course {
+      padding: $padding;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .dash-my-course-title {
+      }
+      .dash-my-course-percentage {
+      }
+      .dash-my-course-start-time {
+      }
+    }
+  }
+}

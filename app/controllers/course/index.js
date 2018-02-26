@@ -8,11 +8,22 @@ export default Ember.Controller.extend({
   cuService: service('current-user'),
   currentUser: alias('cuService.user'),
   noCurrentUser: computed('currentUser', function() {
-    return this.get('currentUser') == null
+    return this.get('currentUser') == null;
   }),
-  store: service(),
   sortedUnits: sort('model.units', 'sortProperties'),
   sortProperties: ['order'],
+  enrollments: alias('currentUser.courseEnrollments'),
+  canEnroll: computed('enrollments', function() {
+    let model = this.get('model')
+    if (this.get('noCurrentUser')) {
+      return false
+    }
+    for (var enrollment in this.get('enrollments')) {
+      console.log('hello')
+      console.log(enrollment.id)
+    }
+    return true
+  }),
   actions: {
     enroll() {
       let model = this.get('model')
