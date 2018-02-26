@@ -28,4 +28,8 @@ export default Ember.Route.extend({
       controller.set('showEnrollButton', true)
     })
   },
+  resetController: function(controller) {
+    this._super.apply(this, arguments);
+    controller.set('showEnrollButton', false);
+  }
 });

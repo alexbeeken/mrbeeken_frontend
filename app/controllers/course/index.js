@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
   sortedUnits: sort('model.units', 'sortProperties'),
   sortProperties: ['order'],
   enrollments: alias('currentUser.courseEnrollments'),
-  showEnrollButton: null,
+  showEnrollButton: false,
   actions: {
     enroll() {
       let model = this.get('model')
