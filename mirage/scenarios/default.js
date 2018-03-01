@@ -31,7 +31,9 @@ export default function(server) {
     'courseEnrollment',
     {
       user: user,
-      course: courses[0]
+      course: courses[0],
+      lastItemId: courses[0].units.models[0].assessments.models[0].id,
+      lastItemType: 'assessment'
     }
   );
 }

@@ -5,5 +5,6 @@ export default DS.Model.extend({
   password: DS.attr(),
   passwordConfirmation: DS.attr(),
   superuser: DS.attr(),
-  courseEnrollments: DS.hasMany('courseEnrollment')
+  courseEnrollments: DS.hasMany('courseEnrollment'),
+  completedCourses: DS.attr()
 });
