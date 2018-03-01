@@ -24,6 +24,7 @@ export default Ember.Controller.extend({
 
       enrollment.save().then(() => {
         this.get('flashMessages').info('You have enrolled in: ' + model.get('title'));
+        this.set('showEnrollButton', false)
       }).catch((reason) => {
         this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
       });

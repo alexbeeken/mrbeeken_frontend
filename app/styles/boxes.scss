@@ -3,6 +3,11 @@ $border-color: $gray;
 $border-radius: 5px;
 $border: $border-thickness solid $border-color;
 
+$thick-border-thickness: 0.5px;
+$thick-border-color: $gray;
+$thick-border-radius: 10px;
+$thick-border: $thick-border-thickness solid $thick-border-color;
+
 $shadow-color: $gray;
 
 $shadow: 0.03em 0.03em $gray;
@@ -13,6 +18,7 @@ $active-shadow: 0.02em 0.02em 0.02em 0.02em $gray;
   padding: $padding;
   box-shadow: $shadow;
   background-color: white;
+  border-radius: $border-radius;
 }
 
 .hover {
@@ -20,6 +26,13 @@ $active-shadow: 0.02em 0.02em 0.02em 0.02em $gray;
     box-shadow: $hover-shadow;
   }
   &:active {
-    box-shadow: $active-shadow
+    box-shadow: $active-shadow;
   }
+}
+
+.border-box {
+  background-color: white;
+  padding: $padding;
+  border: $thick-border;
+  border-radius: $thick-border-radius;
 }
