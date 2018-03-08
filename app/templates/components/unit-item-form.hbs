@@ -1,0 +1,36 @@
+<div class='assessment-form'>
+  <form {{action 'saveUnitItem' on='submit'}}>
+    <div class='assessment-form-input'>
+      {{input
+        type='text'
+        pattern='.{3,120}'
+        required=true
+        placeholder='Title'
+        value=title}}
+    </div>
+
+    <div class='assessment-form-input'>
+      {{input type='radio' name='type' id='t1' value=type valueBinding='assessment' label='assessment'}}
+      <label for='t1'>assessment</label>
+      {{input type='radio' name='type' id='t2' value=type valueBinding='lesson' label='lesson'}}
+      <label for='t2'>lesson</label>
+    </div>
+
+    <div class='lesson-form-input'>
+      {{textarea
+        required=true
+        placeholder='Content'
+        value=content}}
+    </div>
+    <div class='assessment-form-input'>
+      {{input
+        type='text'
+        required=true
+        placeholder='Order'
+        value=order}}
+    </div>
+    <div class='assessment-form-input'>
+      <button type='submit'>Save</button>
+    </div>
+  </form>
+</div>

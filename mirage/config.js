@@ -28,6 +28,25 @@ export default function() {
   this.patch('/units/:id');
   this.del('/units/:id');
 
+  this.get('/unit-items', function(db, request) {
+    let unitItems;
+
+    if(Ember.isEmpty(request.queryParams)) {
+      unitItems = db.unitItems;
+    } else {
+      let unitId = request.queryParams['filter[unit_id]'];
+
+      unitItems = db.unitItems.where({ unitId: unitId });
+    }
+
+    return unitItems;
+  });
+  this.post('/unit-items');
+  this.get('/unit-items/:id');
+  this.patch('/unit-items/:id');
+  this.del('/unit-items/:id');
+
+
   this.get('/assessments', function(db, request) {
     let assessments;
 

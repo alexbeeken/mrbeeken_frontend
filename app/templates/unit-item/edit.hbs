@@ -1,0 +1,7 @@
+<div class='assessment-form-unit-course-title'>
+  <h3>Edit Unit Item {{unitItem.title}} < {{unit.title}}</h3>
+</div>
+{{unit-item-form model=unitItem doneSaving='doneSaving'}}
+{{#link-to 'unit.edit' unit.id}}
+  <h3>Go Back</h3>
+{{/link-to}}

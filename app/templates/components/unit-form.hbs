@@ -1,5 +1,5 @@
 <div class='unit-form'>
-  <form {{action 'saveUnit' on='submit'}}>
+  <form {{action 'saveUnitItem' on='submit'}}>
     <div class='unit-form-input'>
       {{input
         type='text'
@@ -30,16 +30,13 @@
   {{#if unit.id}}
     <table>
       <div class='admin-table'>
-        {{#each sortedItems as |item|}}
-          {{admin-item-row item=item}}
+        {{#each sortedItems as |unitItem|}}
+          {{admin-item-row unitItem=unitItem}}
         {{/each}}
       </div>
     </table>
-    {{#link-to 'assessments.new' unit.id}}
-      <h3>New Assessment</h3>
-    {{/link-to}}
-    {{#link-to 'lessons.new' unit.id}}
-      <h3>New Lesson</h3>
+    {{#link-to 'unit-items.new' unit.id}}
+      <h3>New Unit Item</h3>
     {{/link-to}}
   {{/if}}
 </div>

@@ -25,6 +25,11 @@ export default function(server) {
       rand_within(3, 6),
       { unit: unit }
     );
+    server.createList(
+      'unitItem',
+      rand_within(3, 6),
+      { unit: unit }
+    );
   });
   let user = server.create('user', { superuser: true });
   server.create(

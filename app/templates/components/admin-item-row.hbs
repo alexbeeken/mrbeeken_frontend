@@ -1,20 +1,20 @@
 <tr>
   <td>
-    {{item.order}}
+    {{unitItem.order}}
   </td>
   <td>
-    {{itemType}}
+    {{unitItemType}}
   </td>
   <td>
-    {{item.title}}
+    {{unitItem.title}}
   </td>
   <td>
-    {{#link-to itemEditRoute item.id}}
+    {{#link-to unitItemRoute unitItem.id}}
       {{fa-icon "pencil"}}
     {{/link-to}}
   </td>
   <td>
-    <div {{action "deleteItem" item.id}} class='admin-delete-link'>
+    <div {{action "deleteItem" unitItem.id}} class='admin-delete-link'>
       {{fa-icon "times"}}
     </div>
   </td>

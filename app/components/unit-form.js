@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const { inject, computed } = Ember;
 const { service } = inject;
-const { sort, union } = computed;
+const { sort, union, alias } = computed;
 
 export default Ember.Component.extend({
   didReceiveAttrs() {
@@ -16,11 +16,11 @@ export default Ember.Component.extend({
   summary: null,
   order: null,
   store: service(),
-  items: union('unit.assessments', 'unit.lessons'),
+  unitItems: alias('unit.unitItems'),
   sortProperties: ['order:asc'],
-  sortedItems: sort('items', 'sortProperties'),
+  sortedItems: sort('unitItems', 'sortProperties'),
   actions: {
-    saveUnit() {
+    saveUnitItem() {
       let unit = this.get('unit')
       unit.set('summary', this.get('summary'))
       unit.set('title', this.get('title'))
@@ -30,6 +30,19 @@ export default Ember.Component.extend({
       }).catch((reason) => {
         this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
       })
+    },
+    deleteUnitItem(unitItemId) {
+      if (confirm("Are you sure you want to delete this assessment?")) {
+        this.get('store').findRecord('unit-item', unitItemId, { backgroundReload: false }).then((unitItem) => {
+          unitItem.deleteRecord();
+          unitItem.get('isDeleted'); // => true
+          unitItem.save().then(() => {
+            this.get('flashMessages').info('assessment deleted');
+          }).catch((reason) => {
+            this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
+          });
+        })
+      }
     },
     deleteAssessment(assessment_id) {
       if (confirm("Are you sure you want to delete this assessment?")) {

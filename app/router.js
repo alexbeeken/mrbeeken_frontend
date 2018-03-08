@@ -21,6 +21,12 @@ Router.map(function() {
     }),
     this.resource('unit', { path: '/unit/:unit_id' }, function() {
       this.route('edit')
+      this.resource('unit-items', function() {
+        this.route('new')
+      })
+      this.resource('unit-item', { path: '/unit-item/:unit_item_id' }, function() {
+        this.route('edit')
+      })
       this.resource('assessments', function() {
         this.route('new')
       })
