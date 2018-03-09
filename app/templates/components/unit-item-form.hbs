@@ -10,10 +10,20 @@
     </div>
 
     <div class='assessment-form-input'>
-      {{input type='radio' name='type' id='t1' value=type valueBinding='assessment' label='assessment'}}
-      <label for='t1'>assessment</label>
-      {{input type='radio' name='type' id='t2' value=type valueBinding='lesson' label='lesson'}}
-      <label for='t2'>lesson</label>
+      {{#radio-button
+        value='assessment'
+        groupValue=type
+        required=true
+      }}
+        assessment
+      {{/radio-button}}
+      {{#radio-button
+        value='lesson'
+        groupValue=type
+        required=true
+      }}
+        lesson
+      {{/radio-button}}
     </div>
 
     <div class='lesson-form-input'>
@@ -22,6 +32,7 @@
         placeholder='Content'
         value=content}}
     </div>
+
     <div class='assessment-form-input'>
       {{input
         type='text'

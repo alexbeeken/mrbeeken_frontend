@@ -17,7 +17,6 @@ export default Ember.Component.extend({
     saveUnitItem() {
       let unitItem = this.get('model')
       unitItem.set('title', this.get('title'))
-      debugger
       unitItem.set('type', this.get('type'))
       unitItem.set('order', this.get('order'))
       unitItem.set('content', this.get('content'))

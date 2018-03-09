@@ -14,12 +14,12 @@ export default Ember.Component.extend({
     return 0;
   }),
   itemLinkRoute: computed('enrollment', function() {
-    return this.get('enrollment.lastItemType') + '.index'
+    return this.get('unit-item' + '.index')
   }),
   item: computed('enrollment', function() {
     return this.get('store').findRecord(
-      this.get('enrollment.lastItemType'),
-      this.get('itemId')
+      'unit-item',
+      this.get('enrollment.lastItemId')
     )
   }),
   itemId: alias('enrollment.lastItemId'),
