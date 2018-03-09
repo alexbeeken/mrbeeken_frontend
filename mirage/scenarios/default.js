@@ -5,17 +5,17 @@ const rand_within = function(atLeast, max) {
 export default function(server) {
   let courses = server.createList('course', rand_within(4, 8));
   let units = [];
-  courses.forEach(function(course) {
-    units = units.concat(
-      server.createList(
-        'unit',
-        rand_within(2, 5),
-        { course: course }
-      )
-    );
-  });
-  units.forEach(function(unit) {
+  let unitItems = [];
+  let course = courses[0]
+  units = units.concat(
     server.createList(
+      'unit',
+      rand_within(2, 5),
+      { course: course }
+    )
+  );
+  units.forEach(function(unit) {
+    unitItems = server.createList(
       'unitItem',
       rand_within(3, 6),
       { unit: unit }
@@ -26,7 +26,8 @@ export default function(server) {
     'courseEnrollment',
     {
       user: user,
-      course: courses[0]
+      course: course,
+      lastItemId: units[0].unitItemIds[0]
     }
   );
 }

@@ -10,7 +10,7 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model)
     let showEnrollButton;
-    if (this.get('noCurrentUser')) {
+    if (!this.get('currentUser')) {
       showEnrollButton = false
       controller.set('showEnrollButton', showEnrollButton)
       return

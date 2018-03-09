@@ -14,7 +14,7 @@ export default Ember.Component.extend({
     return 0;
   }),
   itemLinkRoute: computed('enrollment', function() {
-    return this.get('unit-item' + '.index')
+    return 'unit-item.index'
   }),
   item: computed('enrollment', function() {
     return this.get('store').findRecord(

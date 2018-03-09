@@ -14,4 +14,10 @@ export default function(){
     this.fromRoute('login'),
     this.use('toLeft', { duration: 250 })
   );
+  this.transition(
+    this.fromRoute('dashboard'),
+    this.toRoute('unit-item'),
+    this.use('toLeft', { duration: 250 })
+  );
+
 }
