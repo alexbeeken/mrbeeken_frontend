@@ -16,16 +16,6 @@ export default function(server) {
   });
   units.forEach(function(unit) {
     server.createList(
-      'assessment',
-      rand_within(3, 6),
-      { unit: unit }
-    );
-    server.createList(
-      'lesson',
-      rand_within(3, 6),
-      { unit: unit }
-    );
-    server.createList(
       'unitItem',
       rand_within(3, 6),
       { unit: unit }
@@ -36,9 +26,7 @@ export default function(server) {
     'courseEnrollment',
     {
       user: user,
-      course: courses[0],
-      lastItemId: courses[0].units.models[0].assessments.models[0].id,
-      lastItemType: 'assessment'
+      course: courses[0]
     }
   );
 }

@@ -27,18 +27,6 @@ Router.map(function() {
       this.resource('unit-item', { path: '/unit-item/:unit_item_id' }, function() {
         this.route('edit')
       })
-      this.resource('assessments', function() {
-        this.route('new')
-      })
-      this.resource('assessment', { path: '/assessment/:assessment_id' }, function() {
-        this.route('edit')
-      })
-      this.resource('lessons', function() {
-        this.route('new')
-      })
-      this.resource('lesson', { path: '/lesson/:lesson_id' }, function() {
-        this.route('edit')
-      })
     }),
     this.route('edit');
   });

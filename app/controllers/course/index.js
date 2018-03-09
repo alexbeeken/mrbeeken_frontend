@@ -19,7 +19,8 @@ export default Ember.Controller.extend({
       let model = this.get('model')
       let enrollment = this.get('store').createRecord('courseEnrollment', {
         user: this.get('currentUser'),
-        course: model
+        course: model,
+        lastItemId: 0
       });
 
       enrollment.save().then(() => {

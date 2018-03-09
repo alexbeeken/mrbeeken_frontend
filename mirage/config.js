@@ -46,43 +46,6 @@ export default function() {
   this.patch('/unit-items/:id');
   this.del('/unit-items/:id');
 
-
-  this.get('/assessments', function(db, request) {
-    let assessments;
-
-    if(Ember.isEmpty(request.queryParams)) {
-      assessments = db.assessments;
-    } else {
-      let unitId = request.queryParams['filter[unit_id]'];
-
-      assessments = db.assessments.where({ unitId: unitId });
-    }
-
-    return assessments
-  });
-  this.post('/assessments');
-  this.get('/assessments/:id');
-  this.patch('/assessments/:id');
-  this.del('/assessments/:id');
-
-  this.get('/lessons', function(db, request) {
-    let lessons;
-
-    if(Ember.isEmpty(request.queryParams)) {
-      lessons = db.lessons;
-    } else {
-      let unitId = request.queryParams['filter[unit_id]'];
-
-      lessons = db.lessons.where({ unitId: unitId });
-    }
-
-    return lessons
-  });
-  this.del('/lessons/:id');
-  this.get('/lessons/:id');
-  this.patch('/lessons/:id');
-  this.post('/lessons');
-
   this.get('/users/me', function(db) {
     return db.users.first()
   });

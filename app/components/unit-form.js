@@ -32,38 +32,12 @@ export default Ember.Component.extend({
       })
     },
     deleteUnitItem(unitItemId) {
-      if (confirm("Are you sure you want to delete this assessment?")) {
+      if (confirm("Are you sure you want to delete this unit item?")) {
         this.get('store').findRecord('unit-item', unitItemId, { backgroundReload: false }).then((unitItem) => {
           unitItem.deleteRecord();
           unitItem.get('isDeleted'); // => true
           unitItem.save().then(() => {
-            this.get('flashMessages').info('assessment deleted');
-          }).catch((reason) => {
-            this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
-          });
-        })
-      }
-    },
-    deleteAssessment(assessment_id) {
-      if (confirm("Are you sure you want to delete this assessment?")) {
-        this.get('store').findRecord('assessment', assessment_id, { backgroundReload: false }).then((assessment) => {
-          assessment.deleteRecord();
-          assessment.get('isDeleted'); // => true
-          assessment.save().then(() => {
-            this.get('flashMessages').info('assessment deleted');
-          }).catch((reason) => {
-            this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
-          });
-        })
-      }
-    },
-    deleteLesson(lesson_id) {
-      if (confirm("Are you sure you want to delete this lesson?")) {
-        this.get('store').findRecord('lesson', lesson_id, { backgroundReload: false }).then((lesson) => {
-          lesson.deleteRecord();
-          lesson.get('isDeleted'); // => true
-          lesson.save().then(() => {
-            this.get('flashMessages').info('lesson deleted');
+            this.get('flashMessages').info('Unit item deleted');
           }).catch((reason) => {
             this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
           });

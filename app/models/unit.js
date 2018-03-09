@@ -6,6 +6,4 @@ export default DS.Model.extend({
   summary: DS.attr(),
   course: DS.belongsTo('course'),
   unitItems: DS.hasMany('unit-item'),
-  lessons: DS.hasMany('lesson'),
-  assessments: DS.hasMany('assessment')
 });
