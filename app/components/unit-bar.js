@@ -1,10 +1,19 @@
 import Ember from 'ember';
 
 const { inject, computed } = Ember;
-const { controller } = inject;
+const { controller, service } = inject;
 const { alias, sort } = computed;
 
 export default Ember.Component.extend({
+  cuService: service('current-user'),
+  currentUser: alias('cuService.user'),
+  enrollments: alias('currentUser.courseEnrollments'),
+  currentEnrollment: computed('enrollments', function() {
+    let index = this.get('enrollments').map(function(enrollment) {
+      return enrollment.course.id
+    }).indexOf(this.get('unit.course.id'))
+    return this.get('enrollments').objectAt(index)
+  }),
   unitItemController: controller('unit-item'),
   currentUnitItem: alias('unitItemController.model'),
   unitItems: alias('model.unitItems'),
@@ -12,15 +21,23 @@ export default Ember.Component.extend({
   sortedItems: sort('unitItems', 'sortProperties'),
   actions: {
     complete() {
-      this.get('currentUnitItem').save(
+      let currentEnrollment = this.get('currentEnrollment')
+      let currentUnitItem = this.get('currentUnitItem')
+      currentEnrollment.save(
         {
-          isCompleted: true
+          completedItemIds: (
+            currentEnrollment.get(
+              'completedItemIds'
+            ).push(
+              this.get('currentUnitItem.id')
+            )
+          )
         }
-      ).then((newItem) => {
+      ).then(() => {
         let sortedItemIds = this.get('sortedItems').map(function(item) {
           return item.id
         })
-        let index = sortedItemIds.indexOf(newItem.id)
+        let index = sortedItemIds.indexOf(currentUnitItem.id)
         let nextId = sortedItemIds[index + 1]
         if (nextId) {
           this.sendAction('nextUnitItem', nextId)

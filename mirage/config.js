@@ -114,4 +114,5 @@ export default function() {
     return courseEnrollments
   });
   this.get('/course-enrollments/:id');
+  this.patch('/course-enrollments/:id');
 }

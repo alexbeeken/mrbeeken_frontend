@@ -9,5 +9,8 @@ export default Factory.extend({
   },
   completed() {
     return false;
+  },
+  completedItemIds() {
+    return [];
   }
 });
