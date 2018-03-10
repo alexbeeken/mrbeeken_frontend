@@ -6,8 +6,10 @@
     {{#each model.unitItems as |unitItem|}}
       {{unit-bar-item model=unitItem}}
     {{/each}}
-    <div class='unit-bar-item'>
-      {{fa-icon 'arrow-right'}}
-    </div>
+      <button {{action 'complete'}}>
+        <div class='unit-bar-item'>
+          {{fa-icon 'arrow-right'}}
+        </div>
+      </button>
   </div>
 </div>

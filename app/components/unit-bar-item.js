@@ -1,14 +1,14 @@
 import Ember from 'ember';
 
 const { inject, computed } = Ember;
-const { service } = inject;
+const { controller } = inject;
 const { sort, union, alias } = computed;
 
 export default Ember.Component.extend({
+  unitItemController: controller('unit-item'),
+  currentId: alias('unitItemController.model.id'),
   isCompleted: false,
-  actions: {
-    complete() {
-      this.get('model').set('isCompleted', true).save()
-    }
-  }
+  isCurrent: computed('currentId', function() {
+    return this.get('currentId') == this.get('model.id')
+  })
 })

@@ -6,6 +6,16 @@
     .unit-bar-item {
       margin: 0px 20px;
       font-size: 20px;
+      .completed {
+        i {
+          color: gray;
+        }
+      }
+      .current {
+        i {
+          color: orange;
+        }
+      }
     }
   }
 }

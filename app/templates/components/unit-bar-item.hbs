@@ -1,7 +1,21 @@
 <div class='unit-bar-item'>
   {{#if isCompleted}}
-    {{fa-icon 'circle'}}
+    <div class='completed'>
+      {{#if isCurrent}}
+        <div class='current'>
+          {{fa-icon 'circle'}}
+        </div>
+      {{else}}
+        {{fa-icon 'circle'}}
+      {{/if}}
+    </div>
   {{else}}
-    {{fa-icon 'circle-o'}}
+    {{#if isCurrent}}
+      <div class='current'>
+        {{fa-icon 'circle'}}
+      </div>
+    {{else}}
+      {{fa-icon 'circle-o'}}
+    {{/if}}
   {{/if}}
 </div>
