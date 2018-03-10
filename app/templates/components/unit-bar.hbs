@@ -1,0 +1,13 @@
+<div class='unit-bar-space'>
+  <div class='unit-bar'>
+    <div class='unit-bar-item'>
+      {{fa-icon 'arrow-left'}}
+    </div>
+    {{#each model.unitItems as |unitItem|}}
+      {{unit-bar-item model=unitItem}}
+    {{/each}}
+    <div class='unit-bar-item'>
+      {{fa-icon 'arrow-right'}}
+    </div>
+  </div>
+</div>

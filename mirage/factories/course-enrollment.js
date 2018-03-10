@@ -6,5 +6,8 @@ export default Factory.extend({
   },
   lastItemId() {
     return 0;
+  },
+  completed() {
+    return false;
   }
 });

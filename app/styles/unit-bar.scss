@@ -1,0 +1,11 @@
+.unit-bar-space {
+  .unit-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .unit-bar-item {
+      margin: 0px 20px;
+      font-size: 20px;
+    }
+  }
+}
