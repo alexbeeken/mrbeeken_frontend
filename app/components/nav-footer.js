@@ -8,7 +8,6 @@ export default Ember.Component.extend({
   unit: null,
   actions: {
     nextUnitItem(id) {
-      console.log('nav footer component')
       this.sendAction('nextUnitItem', id)
     }
   }

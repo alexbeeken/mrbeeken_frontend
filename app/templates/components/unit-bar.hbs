@@ -1,15 +1,17 @@
 <div class='unit-bar-space'>
   <div class='unit-bar'>
-    <div class='unit-bar-item'>
-      {{fa-icon 'arrow-left'}}
-    </div>
-    {{#each model.unitItems as |unitItem|}}
+    <button {{action 'goBack'}}>
+      <div class='unit-bar-item'>
+        {{fa-icon 'arrow-left'}}
+      </div>
+    </button>
+    {{#each sortedItems as |unitItem|}}
       {{unit-bar-item model=unitItem}}
     {{/each}}
-      <button {{action 'complete'}}>
-        <div class='unit-bar-item'>
-          {{fa-icon 'arrow-right'}}
-        </div>
-      </button>
+    <button {{action 'complete'}}>
+      <div class='unit-bar-item'>
+        {{fa-icon 'arrow-right'}}
+      </div>
+    </button>
   </div>
 </div>

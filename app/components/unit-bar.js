@@ -12,7 +12,6 @@ export default Ember.Component.extend({
   sortedItems: sort('unitItems', 'sortProperties'),
   actions: {
     complete() {
-      let current = this.get('currentUnitItem')
       this.get('currentUnitItem').save(
         {
           isCompleted: true
@@ -23,9 +22,7 @@ export default Ember.Component.extend({
         })
         let index = sortedItemIds.indexOf(newItem.id)
         let nextId = sortedItemIds[index + 1]
-        let sortedItems = this.get('sortedItems')
         if (nextId) {
-          console.log('unit bar component')
           this.sendAction('nextUnitItem', nextId)
         } else {
           this.get('flashMessages').danger('there is no next unit item!! FIX ME ALEX');
@@ -33,6 +30,19 @@ export default Ember.Component.extend({
       }).catch((reason) => {
         this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);
       });
+    },
+    goBack() {
+      let current = this.get('currentUnitItem')
+      let sortedItemIds = this.get('sortedItems').map(function(item) {
+        return item.id
+      })
+      let index = sortedItemIds.indexOf(current.id)
+      let lastId = sortedItemIds[index - 1]
+      if (lastId) {
+        this.sendAction('nextUnitItem', lastId)
+      } else {
+        this.get('flashMessages').danger('there is no next last item!! FIX ME ALEX');
+      }
     }
   }
 })
