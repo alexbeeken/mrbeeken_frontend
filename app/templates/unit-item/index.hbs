@@ -1,10 +1,13 @@
-{{model.unit.course.title}}
->
-{{model.unit.title}}
-<br>
-<br>
-{{model.title}}
-{{model.type}}
-{{model.content}}
-
+<div class='unit-item'>
+  <div class='unit-item-parent-titles'>
+    {{model.unit.course.title}} -> {{model.unit.title}}
+  </div>
+  <div class='unit-item-title'>
+    {{model.title}}
+  </div>
+  <div class='unit-item-content'>
+    {{model.type}}
+    {{model.content}}
+  </div>
+</div>
 {{nav-footer unit=model.unit nextUnitItem='nextUnitItem'}}
