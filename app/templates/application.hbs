@@ -1,12 +1,26 @@
-{{#liquid-if isMenuActive class='show-menu'}}
-  {{component 'nav-menu' dismissMenu='dismissMenu' invalidateSession='invalidateSession'}}
-{{/liquid-if}}
-{{component 'nav-header' toggleMenu='toggleMenu'}}
-<div class='body-space'>
-  <div class='main-content'>
-    {{#each flashMessages.queue as |flash|}}
-      {{flash-message flash=flash}}
-    {{/each}}
-    {{liquid-outlet}}
+{{#mobile-menu-wrapper as |mmw|}}
+  {{component 'nav-header' toggleMenu=(action mmw.actions.toggle)}}
+  <div class='body-space'>
+    <div class='main-content'>
+      {{#each flashMessages.queue as |flash|}}
+        {{flash-message flash=flash}}
+      {{/each}}
+
+      {{liquid-outlet}}
+
+      {{#mmw.mobile-menu as |mm|}}
+        {{#mm.link-to 'index'}}
+          Home
+        {{/mm.link-to}}
+        {{component 'nav-menu' toggleMenu=(action mmw.actions.toggle) invalidateSession='invalidateSession' mm=mm}}
+      {{/mmw.mobile-menu}}
+
+      {{#mmw.mobile-menu type='right' as |mm|}}
+          {{#mm.link-to 'index'}}Home{{/mm.link-to}}
+      {{/mmw.mobile-menu}}
+    </div>
   </div>
-</div>
+  {{#if showFooter}}
+    {{nav-footer nextUnitItem='nextUnitItem'}}
+  {{/if}}
+{{/mobile-menu-wrapper}}

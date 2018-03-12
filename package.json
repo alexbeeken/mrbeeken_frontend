@@ -38,7 +38,10 @@
     "ember-export-application-global": "^2.0.0",
     "ember-font-awesome": "^4.0.0-alpha.14",
     "ember-load-initializers": "^1.0.0",
+    "ember-mobile-menu": "0.1.0-alpha.2",
     "ember-modal-dialog": "^2.3.0",
+    "ember-radio-button": "^1.2.3",
+    "ember-resize": "0.0.17",
     "ember-resolver": "^4.0.0",
     "ember-simple-auth": "^1.4.0",
     "ember-simple-auth-token": "^2.1.0",
@@ -54,6 +57,8 @@
   "dependencies": {
     "ember-cli-sass": "^7.0.0",
     "ember-confirm-dialog": "^1.2.1",
-    "ember-inline-svg": "^0.1.11"
+    "ember-inline-svg": "^0.1.11",
+    "ember-maybe-import-regenerator": "^0.1.6",
+    "npm": "^5.7.1"
   }
 }

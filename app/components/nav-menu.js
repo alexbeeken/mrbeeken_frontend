@@ -9,9 +9,6 @@ export default Ember.Component.extend({
   currentUser: alias('cuService.user'),
   superuser: alias('cuService.user.superuser'),
   actions: {
-    dismissMenu() {
-      this.sendAction('dismissMenu')
-    },
     invalidateSession() {
       this.sendAction('invalidateSession')
     }

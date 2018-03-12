@@ -1,40 +1,34 @@
-<nav class='main-nav'>
-  <div class='menu-header'>
-    <div class='dismiss-menu'>
-      <button {{action 'dismissMenu'}}>{{fa-icon 'times'}}</button>
-    </div>
+<div class='mobile-menu__body'>
+  <div class='mobile-header__text'>
+    User Avatar
   </div>
-  <ul>
+  <ul class='mobile-menu__nav'>
+    <button {{action toggleMenu}}>{{fa-icon 'times'}}</button>
+    <li class='mobile-menu__nav-divider'></li>
     {{#if currentUser}}
-      <li>
-        {{component 'nav-link' text='dashboard' path='dashboard' icon='tachometer'}}
+      <li class='mobile-menu__nav-item'>
+        {{#mm.link-to 'dashboard' class='mobile-menu__nav-link'}}
+          {{fa-icon 'tachometer'}} dashboard
+        {{/mm.link-to}}
       </li>
-    {{/if}}
-    <li>
-      {{component 'nav-link' text='courses' path='courses' icon='graduation-cap'}}
-    </li>
-    {{#if superuser}}
-      <li>
-        {{component 'nav-link' text='admin' path='admin' icon='cog'}}
-      </li>
-    {{/if}}
-    {{#if currentUser}}
-      <li>
-        <a href="#" {{action invalidateSession preventDefault=true}}>
-          <div class='nav-link'>
-            <div class='nav-link-icon'>
-              {{fa-icon 'sign-out'}}
-            </div>
-            <div class='nav-link-text'>
-              logout
-            </div>
-          </div>
+      {{#if superuser}}
+        <li class='mobile-menu__nav-item'>
+          {{#mm.link-to 'admin' class='mobile-menu__nav-link'}}
+            {{fa-icon 'cog'}} admin
+          {{/mm.link-to}}
+        </li>
+      {{/if}}
+      <li class='mobile-menu__nav-item'>
+        <a href='#' {{action invalidateSession preventDefault=true}}>
+          {{fa-icon 'sign-out'}} logout
         </a>
       </li>
     {{else}}
-      <li>
-        {{component 'nav-link' text='login' path='login' icon='sign-in'}}
+      <li class='mobile-menu__nav-item'>
+        {{#mm.link-to 'login' class='mobile-menu__nav-link'}}
+          {{fa-icon 'sign-in'}} login
+        {{/mm.link-to}}
       </li>
     {{/if}}
   </ul>
-</nav>
+</div>

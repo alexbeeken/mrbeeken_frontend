@@ -18,10 +18,13 @@
 @import 'units/form.scss';
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
+@import "ember-mobile-menu";
+@import 'ember-mobile-menu/themes/android';
 
 body {
   margin: 0px;
   background-color: $background-color;
+  height: 100vh;
 }
 
 .body-space {
@@ -31,4 +34,9 @@ body {
     margin-top: 46px;
     width: 100%;
   }
+}
+
+#wrapper {
+  min-height: 100%;
+  overflow: auto;
 }

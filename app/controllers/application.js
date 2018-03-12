@@ -8,6 +8,9 @@ export default Ember.Controller.extend({
   session: service(),
   cuService: service('current-user'),
   currentUser: alias('cuService.user'),
+  showFooter: computed('currentRouteName', function() {
+    return this.get('currentRouteName') === 'unit-item.index';
+  }),
   loggedIn: computed('session.isAuthenticated', function() {
     return this.get('session.isAuthenticated');
   }),
@@ -25,6 +28,9 @@ export default Ember.Controller.extend({
     },
     toggleMenu() {
       this.set('isMenuActive', !this.get('isMenuActive'))
+    },
+    nextUnitItem(id) {
+      this.transitionToRoute('unit-item.index', id);
     }
   },
 });

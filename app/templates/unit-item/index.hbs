@@ -1,13 +1,14 @@
-<div class='unit-item'>
-  <div class='unit-item-parent-titles'>
-    {{model.unit.course.title}} -> {{model.unit.title}}
+{{#liquid-bind model use='toLeft' as |cmodel|}}
+  <div class='unit-item'>
+    <div class='unit-item-parent-titles'>
+      {{cmodel.unit.course.title}} -> {{cmodel.unit.title}}
+    </div>
+    <div class='unit-item-title'>
+      {{cmodel.title}}
+    </div>
+    <div class='unit-item-content'>
+      {{cmodel.type}}
+      {{cmodel.content}}
+    </div>
   </div>
-  <div class='unit-item-title'>
-    {{model.title}}
-  </div>
-  <div class='unit-item-content'>
-    {{model.type}}
-    {{model.content}}
-  </div>
-</div>
-{{nav-footer unit=model.unit nextUnitItem='nextUnitItem'}}
+{{/liquid-bind}}

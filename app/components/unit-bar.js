@@ -29,7 +29,7 @@ export default Ember.Component.extend({
             currentEnrollment.get(
               'completedItemIds'
             ).push(
-              this.get('currentUnitItem.id')
+              currentUnitItem.id
             )
           )
         }

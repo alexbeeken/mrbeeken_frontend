@@ -19,5 +19,4 @@ export default function(){
     this.toRoute('unit-item'),
     this.use('toLeft', { duration: 250 })
   );
-
 }
