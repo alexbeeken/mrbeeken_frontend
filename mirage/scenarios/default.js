@@ -3,31 +3,32 @@ const rand_within = function(atLeast, max) {
 }
 
 export default function(server) {
-  let courses = server.createList('course', rand_within(4, 8));
-  let units = [];
-  let unitItems = [];
-  let course = courses[0]
-  units = units.concat(
-    server.createList(
-      'unit',
-      rand_within(2, 5),
-      { course: course }
-    )
+  let course = server.create('course');
+  let unit = server.create(
+    'unit',
+    { course: course }
   );
-  units.forEach(function(unit) {
-    unitItems = server.createList(
-      'unitItem',
-      rand_within(3, 6),
-      { unit: unit }
-    );
-  });
+  let unitItems = server.createList(
+    'unitItem',
+    rand_within(3, 6),
+    { unit: unit }
+  );
   let user = server.create('user', { superuser: true });
+  let lastVisitedItem = unitItems[rand_within(0, unitItems.length)]
+  let completedItemIds = [];
+  for (let index = 0; index < unitItems.length; index++) {
+    let item = unitItems[index]
+    if (item.id !== lastVisitedItem.id && item.order < lastVisitedItem.order) {
+      completedItemIds.push(item.id)
+    }
+  }
   server.create(
     'courseEnrollment',
     {
       user: user,
       course: course,
-      lastItemId: units[0].unitItemIds[0]
+      lastItemId: lastVisitedItem.id,
+      completedItemIds: completedItemIds
     }
   );
 }

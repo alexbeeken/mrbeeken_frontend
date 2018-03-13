@@ -16,6 +16,9 @@ export default Ember.Component.extend({
       this.set('isCompleted', false)
     }
   },
+  isCompleted: computed('completedIds', function() {
+    return this.get('completedIds').includes(this.get('model.id'))
+  }),
   cuService: service('current-user'),
   currentUser: alias('cuService.user'),
   enrollments: alias('currentUser.courseEnrollments'),
@@ -24,10 +27,10 @@ export default Ember.Component.extend({
       return enrollment.course.id
     }).indexOf(this.get('unit.course.id'))
     return this.get('enrollments').objectAt(index)
-  }),
+  }).volatile(),
   unitItemController: controller('unit-item'),
   currentId: alias('unitItemController.model.id'),
-  isCompleted: null,
+  completedIds: alias('currentEnrollment.completedItemIds'),
   isCurrent: computed('currentId', function() {
     return this.get('currentId') == this.get('model.id')
   })
