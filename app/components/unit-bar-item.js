@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const { inject, computed } = Ember;
 const { controller, service } = inject;
-const { sort, union, alias } = computed;
+const { alias } = computed;
 
 export default Ember.Component.extend({
   willRender() {

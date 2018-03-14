@@ -3,27 +3,50 @@ import Mirage from 'ember-cli-mirage';
 import { faker } from 'ember-cli-mirage';
 import ENV from '../config/environment';
 
-const assignPrevNextId = function(unitItem) {
+const assignPrevNextUnitItemId = function(unitItem) {
   let unit = unitItem.unit;
-  let unitItems = unit.unitItems.sort(function(item) { return item.order });
+  let unitItems = unit.unitItems.sort(function(a, b) { return a.order > b.order });
   let unitItemIds = unitItems.models.map(function(item) { return item.id });
   let index = unitItemIds.indexOf(unitItem.id);
   let next = unitItems.models[index + 1];
   let prev = unitItems.models[index - 1];
   let nextId;
   let prevId;
-  if (next !== -1) {
+  if (next) {
     nextId = next.id
   } else {
     nextId = null
   }
-  if (prev !== -1) {
+  if (prev) {
     prevId = prev.id
   } else {
     prevId = null
   }
   unitItem.update({ nextId: nextId, prevId: prevId })
   return unitItem
+}
+
+const assignPrevNextUnitId = function(unit) {
+  let course = unit.course;
+  let sortedUnits = course.units.models.sort(function(a, b) { return a.order > b.order });
+  let unitIds = sortedUnits.map(function(u) { return u.id });
+  let index = unitIds.indexOf(unit.id);
+  let next = sortedUnits[index + 1];
+  let prev = sortedUnits[index - 1];
+  let nextId;
+  let prevId;
+  if (next) {
+    nextId = next.id
+  } else {
+    nextId = null
+  }
+  if (prev) {
+    prevId = prev.id
+  } else {
+    prevId = null
+  }
+  unit.update({ nextId: nextId, prevId: prevId })
+  return unit
 }
 
 export default function() {
@@ -47,7 +70,11 @@ export default function() {
     return units;
   });
   this.post('/units');
-  this.get('/units/:id');
+  this.get('/units/:id', function(db, request) {
+    let id = request.params.id;
+    let unit = db.units.find(id);
+    return assignPrevNextUnitId(unit)
+  });
   this.patch('/units/:id');
   this.del('/units/:id');
 
@@ -62,17 +89,13 @@ export default function() {
       unitItems = db.unitItems.where({ unitId: unitId });
     }
 
-    unitItems.models.forEach(function(unitItem) {
-      assignPrevNextId(unitItem)
-    });
-
     return unitItems;
   });
   this.post('/unit-items');
   this.get('/unit-items/:id', function(db, request) {
     let id = request.params.id;
     let unitItem = db.unitItems.find(id);
-    return assignPrevNextId(unitItem)
+    return assignPrevNextUnitItemId(unitItem)
   });
   this.patch('/unit-items/:id');
   this.del('/unit-items/:id');

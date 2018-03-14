@@ -34,15 +34,11 @@ export default Ember.Component.extend({
           )
         }
       ).then(() => {
-        let sortedItemIds = this.get('sortedItems').map(function(item) {
-          return item.id
-        })
-        let index = sortedItemIds.indexOf(currentUnitItem.id)
         let nextId =  this.get('currentUnitItem.nextId')
         if (nextId) {
-          this.sendAction('nextUnitItem', this.get('currentUnitItem.nextId'))
+          this.sendAction('nextUnitItem', nextId)
         } else {
-          this.get('flashMessages').danger('there is no next unit item!! FIX ME ALEX');
+          this.sendAction('nextUnit')
         }
       }).catch((reason) => {
         this.get('flashMessages').danger(reason.message || reason.errors[0].title || reason);

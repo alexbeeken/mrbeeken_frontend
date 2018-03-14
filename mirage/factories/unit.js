@@ -9,5 +9,7 @@ export default Factory.extend({
   },
   order() {
     return Math.round(Math.random(100) * 200);
-  }
+  },
+  nextId: null,
+  prevId: null
 });
