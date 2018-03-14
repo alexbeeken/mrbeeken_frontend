@@ -12,5 +12,7 @@ export default Factory.extend({
   },
   type(i) {
     return faker.list.random('assessment', 'lesson')(i);
-  }
+  },
+  nextId: null,
+  prevId: null
 });

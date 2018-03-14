@@ -5,6 +5,11 @@
   <ul class='mobile-menu__nav'>
     <button {{action toggleMenu}}>{{fa-icon 'times'}}</button>
     <li class='mobile-menu__nav-divider'></li>
+    <li class='mobile-menu__nav-item'>
+      {{#mm.link-to 'courses' class='mobile-menu__nav-link'}}
+        {{fa-icon 'graduation-cap'}} courses
+      {{/mm.link-to}}
+    </li>
     {{#if currentUser}}
       <li class='mobile-menu__nav-item'>
         {{#mm.link-to 'dashboard' class='mobile-menu__nav-link'}}

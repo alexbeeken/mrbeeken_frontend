@@ -38,9 +38,9 @@ export default Ember.Component.extend({
           return item.id
         })
         let index = sortedItemIds.indexOf(currentUnitItem.id)
-        let nextId = sortedItemIds[index + 1]
+        let nextId =  this.get('currentUnitItem.nextId')
         if (nextId) {
-          this.sendAction('nextUnitItem', nextId)
+          this.sendAction('nextUnitItem', this.get('currentUnitItem.nextId'))
         } else {
           this.get('flashMessages').danger('there is no next unit item!! FIX ME ALEX');
         }
@@ -56,7 +56,7 @@ export default Ember.Component.extend({
       let index = sortedItemIds.indexOf(current.id)
       let lastId = sortedItemIds[index - 1]
       if (lastId) {
-        this.sendAction('nextUnitItem', lastId)
+        this.sendAction('nextUnitItem', this.get('currentUnitItem.prevId'))
       } else {
         this.get('flashMessages').danger('there is no next last item!! FIX ME ALEX');
       }

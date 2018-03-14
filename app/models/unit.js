@@ -1,9 +1,11 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  title: DS.attr(),
-  order: DS.attr(),
-  summary: DS.attr(),
   course: DS.belongsTo('course'),
-  unitItems: DS.hasMany('unit-item'),
+  nextId: DS.attr(),
+  order: DS.attr(),
+  prevId: DS.attr(),
+  summary: DS.attr(),
+  title: DS.attr(),
+  unitItems: DS.hasMany('unit-item')
 });

@@ -31,4 +31,16 @@ export default function(server) {
       completedItemIds: completedItemIds
     }
   );
+  let units = server.createList(
+    'unit',
+    rand_within(2, 5),
+    { course: course }
+  );
+  for (let i = 0; i < units.length; i++) {
+    server.createList(
+      'unitItem',
+      rand_within(3, 6),
+      { unit: units[i] }
+    );
+  }
 }

@@ -3,6 +3,29 @@ import Mirage from 'ember-cli-mirage';
 import { faker } from 'ember-cli-mirage';
 import ENV from '../config/environment';
 
+const assignPrevNextId = function(unitItem) {
+  let unit = unitItem.unit;
+  let unitItems = unit.unitItems.sort(function(item) { return item.order });
+  let unitItemIds = unitItems.models.map(function(item) { return item.id });
+  let index = unitItemIds.indexOf(unitItem.id);
+  let next = unitItems.models[index + 1];
+  let prev = unitItems.models[index - 1];
+  let nextId;
+  let prevId;
+  if (next !== -1) {
+    nextId = next.id
+  } else {
+    nextId = null
+  }
+  if (prev !== -1) {
+    prevId = prev.id
+  } else {
+    prevId = null
+  }
+  unitItem.update({ nextId: nextId, prevId: prevId })
+  return unitItem
+}
+
 export default function() {
   this.urlPrefix = ENV['apiHost'];
 
@@ -31,7 +54,7 @@ export default function() {
   this.get('/unit-items', function(db, request) {
     let unitItems;
 
-    if(Ember.isEmpty(request.queryParams)) {
+    if (Ember.isEmpty(request.queryParams)) {
       unitItems = db.unitItems;
     } else {
       let unitId = request.queryParams['filter[unit_id]'];
@@ -39,10 +62,18 @@ export default function() {
       unitItems = db.unitItems.where({ unitId: unitId });
     }
 
+    unitItems.models.forEach(function(unitItem) {
+      assignPrevNextId(unitItem)
+    });
+
     return unitItems;
   });
   this.post('/unit-items');
-  this.get('/unit-items/:id');
+  this.get('/unit-items/:id', function(db, request) {
+    let id = request.params.id;
+    let unitItem = db.unitItems.find(id);
+    return assignPrevNextId(unitItem)
+  });
   this.patch('/unit-items/:id');
   this.del('/unit-items/:id');
 
