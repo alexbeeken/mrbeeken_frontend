@@ -36,3 +36,13 @@ $active-shadow: 0.02em 0.02em 0.02em 0.02em $gray;
   border: $thick-border;
   border-radius: $thick-border-radius;
 }
+
+.tooltip {
+  width: 250px;
+  height: 100px;
+  margin-left: -40px;
+  position: absolute;
+  bottom: 35px;
+  animation: 0.1s linear 0s 1 slideInFromBottom;
+  z-index: -10;
+}

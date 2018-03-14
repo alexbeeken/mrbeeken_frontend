@@ -19,4 +19,9 @@ export default function(){
     this.toRoute('unit-item'),
     this.use('toLeft', { duration: 250 })
   );
+  this.transition(
+    this.hasClass('unit-item-show-title'),
+    this.toValue(true),
+    this.use('toLeft', { duration: 250 })
+  );
 }

@@ -1,4 +1,9 @@
 <div class='unit-bar-item'>
+  {{#if showTitle}}
+    <div class='tooltip box'>
+      {{model.title}}
+    </div>
+  {{/if}}
   {{#if isCompleted}}
     <div class='completed'>
       {{#if isCurrent}}
@@ -6,7 +11,9 @@
           {{fa-icon 'check-circle'}}
         </div>
       {{else}}
-        {{fa-icon 'check-circle'}}
+        {{#link-to 'unit-item.index' model.id}}
+          {{fa-icon 'check-circle'}}
+        {{/link-to}}
       {{/if}}
     </div>
   {{else}}

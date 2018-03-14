@@ -33,5 +33,12 @@ export default Ember.Component.extend({
   completedIds: alias('currentEnrollment.completedItemIds'),
   isCurrent: computed('currentId', function() {
     return this.get('currentId') == this.get('model.id')
-  })
+  }),
+  showTitle: false,
+  mouseEnter() {
+    this.set('showTitle', true);
+  },
+  mouseLeave() {
+    this.set('showTitle', false);
+  }
 })
