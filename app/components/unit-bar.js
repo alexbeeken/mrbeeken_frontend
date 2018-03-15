@@ -54,7 +54,7 @@ export default Ember.Component.extend({
       if (lastId) {
         this.sendAction('nextUnitItem', this.get('currentUnitItem.prevId'))
       } else {
-        this.get('flashMessages').danger('there is no next last item!! FIX ME ALEX');
+        this.sendAction('lastUnit')
       }
     }
   }

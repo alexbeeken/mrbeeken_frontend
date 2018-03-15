@@ -34,6 +34,9 @@ export default Ember.Controller.extend({
     },
     nextUnit(nextId, unit) {
       this.transitionToRoute('unit-item.index', unit.get('course.id'), unit.get('id'), nextId)
+    },
+    lastUnit(prevId, unit) {
+      this.transitionToRoute('unit-item.index', unit.get('course.id'), unit.get('id'), prevId)
     }
   },
 });
