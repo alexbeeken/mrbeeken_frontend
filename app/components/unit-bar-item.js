@@ -7,9 +7,14 @@ const { alias } = computed;
 export default Ember.Component.extend({
   willRender() {
     this._super(...arguments);
+    let modelId = this.get('model.id')
+    this.set(
+      'currentEnrollment.lastVisitedItem',
+      modelId
+    )
     let index = this.get(
       'currentEnrollment.completedItemIds'
-    ).indexOf(this.get('model.id'))
+    ).indexOf(modelId)
     if (index !== -1) {
       this.set('isCompleted', true)
     } else {
