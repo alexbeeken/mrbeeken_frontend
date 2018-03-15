@@ -1,11 +1,11 @@
 .nav-header {
   background-color: #abcfe7;
   border: $border;
+  width: 100%;
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
-  position: fixed;
   z-index: 10;
   .main-logo {
     svg {
@@ -13,7 +13,29 @@
     }
   }
   .menu-toggle {
-    float: right;
+    float: left;
+    font-family: 'Oswald';
+    font-size: 1.2em;
+    text-align: center;
+    display: flex;
+    margin-bottom: 0.2em;
+    margin-right: 0.6em;
+    a {
+      margin: auto;
+      text-decoration: none;
+      color: black;
+      width: 40px;
+      font-size: 1.5em;
+      &:active {
+        animation:         boop 0.1s;
+        -webkit-animation: boop 0.1s;
+        -moz-animation:    boop 0.1s;
+        -o-animation:      boop 0.1s;
+      }
+    }
+  }
+  .user-link {
+    float: left;
     font-family: 'Oswald';
     font-size: 1.2em;
     text-align: center;
